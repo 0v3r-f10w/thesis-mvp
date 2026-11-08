@@ -1,0 +1,17 @@
+TEST 1: _has_progress hidden-failure detection
+  PASSED
+
+TEST 2: Reviewer triggers on sustained stall
+
+==================================================================
+REVIEWER TRIGGERED (unit test)
+==================================================================
+reviewer invocations : 3
+executor calls       : 8
+diagnosis            : The pods/log permission is absent; logs cannot be read, so created pods are unusable.
+blocked_by           : environment
+revised_direction    : {"goal": "Abandon the logs channel", "first_concrete_step": "try /api/v1/namespaces/stuck-lab/pods?limit=1 to confirm scope", "why_different": "avoids the blocked subresource"}
+==================================================================
+  PASSED
+
+ALL TESTS PASSED

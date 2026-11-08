@@ -1,0 +1,6378 @@
+{
+  "schema_version": "1.0",
+  "source": {
+    "file": "C:\\Users\\28734\\Desktop\\云计算系统\\ImplicitPermission-main\\Explicit_Permission_Analysis\\results\\result.txt",
+    "kubernetes_version": "v1.30.10",
+    "line_count": 116
+  },
+  "actions": [
+    {
+      "action_id": "act:deployments/scale:get",
+      "resource": "deployments/scale",
+      "verb": "get",
+      "parent_resource": "deployments",
+      "subresource": "scale",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:deployments/scale:update",
+      "resource": "deployments/scale",
+      "verb": "update",
+      "parent_resource": "deployments",
+      "subresource": "scale",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:deployments/scale:patch",
+      "resource": "deployments/scale",
+      "verb": "patch",
+      "parent_resource": "deployments",
+      "subresource": "scale",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:subjectaccessreviews:create",
+      "resource": "subjectaccessreviews",
+      "verb": "create",
+      "parent_resource": "subjectaccessreviews",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:selfsubjectrulesreviews:create",
+      "resource": "selfsubjectrulesreviews",
+      "verb": "create",
+      "parent_resource": "selfsubjectrulesreviews",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:poddisruptionbudgets/status:get",
+      "resource": "poddisruptionbudgets/status",
+      "verb": "get",
+      "parent_resource": "poddisruptionbudgets",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:poddisruptionbudgets/status:update",
+      "resource": "poddisruptionbudgets/status",
+      "verb": "update",
+      "parent_resource": "poddisruptionbudgets",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:poddisruptionbudgets/status:patch",
+      "resource": "poddisruptionbudgets/status",
+      "verb": "patch",
+      "parent_resource": "poddisruptionbudgets",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:clusterroles:create",
+      "resource": "clusterroles",
+      "verb": "create",
+      "parent_resource": "clusterroles",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:clusterroles:delete",
+      "resource": "clusterroles",
+      "verb": "delete",
+      "parent_resource": "clusterroles",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:clusterroles:deletecollection",
+      "resource": "clusterroles",
+      "verb": "deletecollection",
+      "parent_resource": "clusterroles",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:clusterroles:get",
+      "resource": "clusterroles",
+      "verb": "get",
+      "parent_resource": "clusterroles",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:clusterroles:list",
+      "resource": "clusterroles",
+      "verb": "list",
+      "parent_resource": "clusterroles",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:clusterroles:update",
+      "resource": "clusterroles",
+      "verb": "update",
+      "parent_resource": "clusterroles",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:clusterroles:watch",
+      "resource": "clusterroles",
+      "verb": "watch",
+      "parent_resource": "clusterroles",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:clusterroles:patch",
+      "resource": "clusterroles",
+      "verb": "patch",
+      "parent_resource": "clusterroles",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:csidrivers:create",
+      "resource": "csidrivers",
+      "verb": "create",
+      "parent_resource": "csidrivers",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:csidrivers:delete",
+      "resource": "csidrivers",
+      "verb": "delete",
+      "parent_resource": "csidrivers",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:csidrivers:deletecollection",
+      "resource": "csidrivers",
+      "verb": "deletecollection",
+      "parent_resource": "csidrivers",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:csidrivers:get",
+      "resource": "csidrivers",
+      "verb": "get",
+      "parent_resource": "csidrivers",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:csidrivers:list",
+      "resource": "csidrivers",
+      "verb": "list",
+      "parent_resource": "csidrivers",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:csidrivers:update",
+      "resource": "csidrivers",
+      "verb": "update",
+      "parent_resource": "csidrivers",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:csidrivers:watch",
+      "resource": "csidrivers",
+      "verb": "watch",
+      "parent_resource": "csidrivers",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:csidrivers:patch",
+      "resource": "csidrivers",
+      "verb": "patch",
+      "parent_resource": "csidrivers",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:pods/attach:get",
+      "resource": "pods/attach",
+      "verb": "get",
+      "parent_resource": "pods",
+      "subresource": "attach",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:pods/attach:create",
+      "resource": "pods/attach",
+      "verb": "create",
+      "parent_resource": "pods",
+      "subresource": "attach",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:nodes/proxy:get",
+      "resource": "nodes/proxy",
+      "verb": "get",
+      "parent_resource": "nodes",
+      "subresource": "proxy",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:nodes/proxy:create",
+      "resource": "nodes/proxy",
+      "verb": "create",
+      "parent_resource": "nodes",
+      "subresource": "proxy",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:nodes/proxy:update",
+      "resource": "nodes/proxy",
+      "verb": "update",
+      "parent_resource": "nodes",
+      "subresource": "proxy",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:nodes/proxy:patch",
+      "resource": "nodes/proxy",
+      "verb": "patch",
+      "parent_resource": "nodes",
+      "subresource": "proxy",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:nodes/proxy:delete",
+      "resource": "nodes/proxy",
+      "verb": "delete",
+      "parent_resource": "nodes",
+      "subresource": "proxy",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:namespaces:create",
+      "resource": "namespaces",
+      "verb": "create",
+      "parent_resource": "namespaces",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:namespaces:delete",
+      "resource": "namespaces",
+      "verb": "delete",
+      "parent_resource": "namespaces",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:namespaces:get",
+      "resource": "namespaces",
+      "verb": "get",
+      "parent_resource": "namespaces",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:namespaces:list",
+      "resource": "namespaces",
+      "verb": "list",
+      "parent_resource": "namespaces",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:namespaces:update",
+      "resource": "namespaces",
+      "verb": "update",
+      "parent_resource": "namespaces",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:namespaces:watch",
+      "resource": "namespaces",
+      "verb": "watch",
+      "parent_resource": "namespaces",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:namespaces:patch",
+      "resource": "namespaces",
+      "verb": "patch",
+      "parent_resource": "namespaces",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclassparameters:create",
+      "resource": "resourceclassparameters",
+      "verb": "create",
+      "parent_resource": "resourceclassparameters",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclassparameters:delete",
+      "resource": "resourceclassparameters",
+      "verb": "delete",
+      "parent_resource": "resourceclassparameters",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclassparameters:deletecollection",
+      "resource": "resourceclassparameters",
+      "verb": "deletecollection",
+      "parent_resource": "resourceclassparameters",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclassparameters:get",
+      "resource": "resourceclassparameters",
+      "verb": "get",
+      "parent_resource": "resourceclassparameters",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclassparameters:list",
+      "resource": "resourceclassparameters",
+      "verb": "list",
+      "parent_resource": "resourceclassparameters",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclassparameters:update",
+      "resource": "resourceclassparameters",
+      "verb": "update",
+      "parent_resource": "resourceclassparameters",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclassparameters:watch",
+      "resource": "resourceclassparameters",
+      "verb": "watch",
+      "parent_resource": "resourceclassparameters",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclassparameters:patch",
+      "resource": "resourceclassparameters",
+      "verb": "patch",
+      "parent_resource": "resourceclassparameters",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:volumeattributesclasses:create",
+      "resource": "volumeattributesclasses",
+      "verb": "create",
+      "parent_resource": "volumeattributesclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:volumeattributesclasses:delete",
+      "resource": "volumeattributesclasses",
+      "verb": "delete",
+      "parent_resource": "volumeattributesclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:volumeattributesclasses:deletecollection",
+      "resource": "volumeattributesclasses",
+      "verb": "deletecollection",
+      "parent_resource": "volumeattributesclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:volumeattributesclasses:get",
+      "resource": "volumeattributesclasses",
+      "verb": "get",
+      "parent_resource": "volumeattributesclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:volumeattributesclasses:list",
+      "resource": "volumeattributesclasses",
+      "verb": "list",
+      "parent_resource": "volumeattributesclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:volumeattributesclasses:update",
+      "resource": "volumeattributesclasses",
+      "verb": "update",
+      "parent_resource": "volumeattributesclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:volumeattributesclasses:watch",
+      "resource": "volumeattributesclasses",
+      "verb": "watch",
+      "parent_resource": "volumeattributesclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:volumeattributesclasses:patch",
+      "resource": "volumeattributesclasses",
+      "verb": "patch",
+      "parent_resource": "volumeattributesclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:horizontalpodautoscalers:create",
+      "resource": "horizontalpodautoscalers",
+      "verb": "create",
+      "parent_resource": "horizontalpodautoscalers",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:horizontalpodautoscalers:delete",
+      "resource": "horizontalpodautoscalers",
+      "verb": "delete",
+      "parent_resource": "horizontalpodautoscalers",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:horizontalpodautoscalers:deletecollection",
+      "resource": "horizontalpodautoscalers",
+      "verb": "deletecollection",
+      "parent_resource": "horizontalpodautoscalers",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:horizontalpodautoscalers:get",
+      "resource": "horizontalpodautoscalers",
+      "verb": "get",
+      "parent_resource": "horizontalpodautoscalers",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:horizontalpodautoscalers:list",
+      "resource": "horizontalpodautoscalers",
+      "verb": "list",
+      "parent_resource": "horizontalpodautoscalers",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:horizontalpodautoscalers:update",
+      "resource": "horizontalpodautoscalers",
+      "verb": "update",
+      "parent_resource": "horizontalpodautoscalers",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:horizontalpodautoscalers:watch",
+      "resource": "horizontalpodautoscalers",
+      "verb": "watch",
+      "parent_resource": "horizontalpodautoscalers",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:horizontalpodautoscalers:patch",
+      "resource": "horizontalpodautoscalers",
+      "verb": "patch",
+      "parent_resource": "horizontalpodautoscalers",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:certificatesigningrequests:create",
+      "resource": "certificatesigningrequests",
+      "verb": "create",
+      "parent_resource": "certificatesigningrequests",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:certificatesigningrequests:delete",
+      "resource": "certificatesigningrequests",
+      "verb": "delete",
+      "parent_resource": "certificatesigningrequests",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:certificatesigningrequests:deletecollection",
+      "resource": "certificatesigningrequests",
+      "verb": "deletecollection",
+      "parent_resource": "certificatesigningrequests",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:certificatesigningrequests:get",
+      "resource": "certificatesigningrequests",
+      "verb": "get",
+      "parent_resource": "certificatesigningrequests",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:certificatesigningrequests:list",
+      "resource": "certificatesigningrequests",
+      "verb": "list",
+      "parent_resource": "certificatesigningrequests",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:certificatesigningrequests:update",
+      "resource": "certificatesigningrequests",
+      "verb": "update",
+      "parent_resource": "certificatesigningrequests",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:certificatesigningrequests:watch",
+      "resource": "certificatesigningrequests",
+      "verb": "watch",
+      "parent_resource": "certificatesigningrequests",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:certificatesigningrequests:patch",
+      "resource": "certificatesigningrequests",
+      "verb": "patch",
+      "parent_resource": "certificatesigningrequests",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:leases:create",
+      "resource": "leases",
+      "verb": "create",
+      "parent_resource": "leases",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:leases:delete",
+      "resource": "leases",
+      "verb": "delete",
+      "parent_resource": "leases",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:leases:deletecollection",
+      "resource": "leases",
+      "verb": "deletecollection",
+      "parent_resource": "leases",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:leases:get",
+      "resource": "leases",
+      "verb": "get",
+      "parent_resource": "leases",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:leases:list",
+      "resource": "leases",
+      "verb": "list",
+      "parent_resource": "leases",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:leases:update",
+      "resource": "leases",
+      "verb": "update",
+      "parent_resource": "leases",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:leases:watch",
+      "resource": "leases",
+      "verb": "watch",
+      "parent_resource": "leases",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:leases:patch",
+      "resource": "leases",
+      "verb": "patch",
+      "parent_resource": "leases",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:priorityclasses:create",
+      "resource": "priorityclasses",
+      "verb": "create",
+      "parent_resource": "priorityclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:priorityclasses:delete",
+      "resource": "priorityclasses",
+      "verb": "delete",
+      "parent_resource": "priorityclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:priorityclasses:deletecollection",
+      "resource": "priorityclasses",
+      "verb": "deletecollection",
+      "parent_resource": "priorityclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:priorityclasses:get",
+      "resource": "priorityclasses",
+      "verb": "get",
+      "parent_resource": "priorityclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:priorityclasses:list",
+      "resource": "priorityclasses",
+      "verb": "list",
+      "parent_resource": "priorityclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:priorityclasses:update",
+      "resource": "priorityclasses",
+      "verb": "update",
+      "parent_resource": "priorityclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:priorityclasses:watch",
+      "resource": "priorityclasses",
+      "verb": "watch",
+      "parent_resource": "priorityclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:priorityclasses:patch",
+      "resource": "priorityclasses",
+      "verb": "patch",
+      "parent_resource": "priorityclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:daemonsets:create",
+      "resource": "daemonsets",
+      "verb": "create",
+      "parent_resource": "daemonsets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": "create_daemonset",
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:daemonsets:delete",
+      "resource": "daemonsets",
+      "verb": "delete",
+      "parent_resource": "daemonsets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:daemonsets:deletecollection",
+      "resource": "daemonsets",
+      "verb": "deletecollection",
+      "parent_resource": "daemonsets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:daemonsets:get",
+      "resource": "daemonsets",
+      "verb": "get",
+      "parent_resource": "daemonsets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:daemonsets:list",
+      "resource": "daemonsets",
+      "verb": "list",
+      "parent_resource": "daemonsets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:daemonsets:update",
+      "resource": "daemonsets",
+      "verb": "update",
+      "parent_resource": "daemonsets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:daemonsets:watch",
+      "resource": "daemonsets",
+      "verb": "watch",
+      "parent_resource": "daemonsets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:daemonsets:patch",
+      "resource": "daemonsets",
+      "verb": "patch",
+      "parent_resource": "daemonsets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:cronjobs:create",
+      "resource": "cronjobs",
+      "verb": "create",
+      "parent_resource": "cronjobs",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": "create_cronjob",
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:cronjobs:delete",
+      "resource": "cronjobs",
+      "verb": "delete",
+      "parent_resource": "cronjobs",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:cronjobs:deletecollection",
+      "resource": "cronjobs",
+      "verb": "deletecollection",
+      "parent_resource": "cronjobs",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:cronjobs:get",
+      "resource": "cronjobs",
+      "verb": "get",
+      "parent_resource": "cronjobs",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:cronjobs:list",
+      "resource": "cronjobs",
+      "verb": "list",
+      "parent_resource": "cronjobs",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:cronjobs:update",
+      "resource": "cronjobs",
+      "verb": "update",
+      "parent_resource": "cronjobs",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:cronjobs:watch",
+      "resource": "cronjobs",
+      "verb": "watch",
+      "parent_resource": "cronjobs",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:cronjobs:patch",
+      "resource": "cronjobs",
+      "verb": "patch",
+      "parent_resource": "cronjobs",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:nodes/status:get",
+      "resource": "nodes/status",
+      "verb": "get",
+      "parent_resource": "nodes",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:nodes/status:update",
+      "resource": "nodes/status",
+      "verb": "update",
+      "parent_resource": "nodes",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:nodes/status:patch",
+      "resource": "nodes/status",
+      "verb": "patch",
+      "parent_resource": "nodes",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:limitranges:create",
+      "resource": "limitranges",
+      "verb": "create",
+      "parent_resource": "limitranges",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:limitranges:delete",
+      "resource": "limitranges",
+      "verb": "delete",
+      "parent_resource": "limitranges",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:limitranges:deletecollection",
+      "resource": "limitranges",
+      "verb": "deletecollection",
+      "parent_resource": "limitranges",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:limitranges:get",
+      "resource": "limitranges",
+      "verb": "get",
+      "parent_resource": "limitranges",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:limitranges:list",
+      "resource": "limitranges",
+      "verb": "list",
+      "parent_resource": "limitranges",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:limitranges:update",
+      "resource": "limitranges",
+      "verb": "update",
+      "parent_resource": "limitranges",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:limitranges:watch",
+      "resource": "limitranges",
+      "verb": "watch",
+      "parent_resource": "limitranges",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:limitranges:patch",
+      "resource": "limitranges",
+      "verb": "patch",
+      "parent_resource": "limitranges",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:replicasets/status:get",
+      "resource": "replicasets/status",
+      "verb": "get",
+      "parent_resource": "replicasets",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:replicasets/status:update",
+      "resource": "replicasets/status",
+      "verb": "update",
+      "parent_resource": "replicasets",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:replicasets/status:patch",
+      "resource": "replicasets/status",
+      "verb": "patch",
+      "parent_resource": "replicasets",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:flowschemas:create",
+      "resource": "flowschemas",
+      "verb": "create",
+      "parent_resource": "flowschemas",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:flowschemas:delete",
+      "resource": "flowschemas",
+      "verb": "delete",
+      "parent_resource": "flowschemas",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:flowschemas:deletecollection",
+      "resource": "flowschemas",
+      "verb": "deletecollection",
+      "parent_resource": "flowschemas",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:flowschemas:get",
+      "resource": "flowschemas",
+      "verb": "get",
+      "parent_resource": "flowschemas",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:flowschemas:list",
+      "resource": "flowschemas",
+      "verb": "list",
+      "parent_resource": "flowschemas",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:flowschemas:update",
+      "resource": "flowschemas",
+      "verb": "update",
+      "parent_resource": "flowschemas",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:flowschemas:watch",
+      "resource": "flowschemas",
+      "verb": "watch",
+      "parent_resource": "flowschemas",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:flowschemas:patch",
+      "resource": "flowschemas",
+      "verb": "patch",
+      "parent_resource": "flowschemas",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:pods/eviction:create",
+      "resource": "pods/eviction",
+      "verb": "create",
+      "parent_resource": "pods",
+      "subresource": "eviction",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclaimtemplates:create",
+      "resource": "resourceclaimtemplates",
+      "verb": "create",
+      "parent_resource": "resourceclaimtemplates",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclaimtemplates:delete",
+      "resource": "resourceclaimtemplates",
+      "verb": "delete",
+      "parent_resource": "resourceclaimtemplates",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclaimtemplates:deletecollection",
+      "resource": "resourceclaimtemplates",
+      "verb": "deletecollection",
+      "parent_resource": "resourceclaimtemplates",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclaimtemplates:get",
+      "resource": "resourceclaimtemplates",
+      "verb": "get",
+      "parent_resource": "resourceclaimtemplates",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclaimtemplates:list",
+      "resource": "resourceclaimtemplates",
+      "verb": "list",
+      "parent_resource": "resourceclaimtemplates",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclaimtemplates:update",
+      "resource": "resourceclaimtemplates",
+      "verb": "update",
+      "parent_resource": "resourceclaimtemplates",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclaimtemplates:watch",
+      "resource": "resourceclaimtemplates",
+      "verb": "watch",
+      "parent_resource": "resourceclaimtemplates",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclaimtemplates:patch",
+      "resource": "resourceclaimtemplates",
+      "verb": "patch",
+      "parent_resource": "resourceclaimtemplates",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:podtemplates:create",
+      "resource": "podtemplates",
+      "verb": "create",
+      "parent_resource": "podtemplates",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:podtemplates:delete",
+      "resource": "podtemplates",
+      "verb": "delete",
+      "parent_resource": "podtemplates",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:podtemplates:deletecollection",
+      "resource": "podtemplates",
+      "verb": "deletecollection",
+      "parent_resource": "podtemplates",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:podtemplates:get",
+      "resource": "podtemplates",
+      "verb": "get",
+      "parent_resource": "podtemplates",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:podtemplates:list",
+      "resource": "podtemplates",
+      "verb": "list",
+      "parent_resource": "podtemplates",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:podtemplates:update",
+      "resource": "podtemplates",
+      "verb": "update",
+      "parent_resource": "podtemplates",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:podtemplates:watch",
+      "resource": "podtemplates",
+      "verb": "watch",
+      "parent_resource": "podtemplates",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:podtemplates:patch",
+      "resource": "podtemplates",
+      "verb": "patch",
+      "parent_resource": "podtemplates",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:serviceaccounts:create",
+      "resource": "serviceaccounts",
+      "verb": "create",
+      "parent_resource": "serviceaccounts",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:serviceaccounts:delete",
+      "resource": "serviceaccounts",
+      "verb": "delete",
+      "parent_resource": "serviceaccounts",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:serviceaccounts:deletecollection",
+      "resource": "serviceaccounts",
+      "verb": "deletecollection",
+      "parent_resource": "serviceaccounts",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:serviceaccounts:get",
+      "resource": "serviceaccounts",
+      "verb": "get",
+      "parent_resource": "serviceaccounts",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:serviceaccounts:list",
+      "resource": "serviceaccounts",
+      "verb": "list",
+      "parent_resource": "serviceaccounts",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:serviceaccounts:update",
+      "resource": "serviceaccounts",
+      "verb": "update",
+      "parent_resource": "serviceaccounts",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:serviceaccounts:watch",
+      "resource": "serviceaccounts",
+      "verb": "watch",
+      "parent_resource": "serviceaccounts",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:serviceaccounts:patch",
+      "resource": "serviceaccounts",
+      "verb": "patch",
+      "parent_resource": "serviceaccounts",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:poddisruptionbudgets:create",
+      "resource": "poddisruptionbudgets",
+      "verb": "create",
+      "parent_resource": "poddisruptionbudgets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:poddisruptionbudgets:delete",
+      "resource": "poddisruptionbudgets",
+      "verb": "delete",
+      "parent_resource": "poddisruptionbudgets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:poddisruptionbudgets:deletecollection",
+      "resource": "poddisruptionbudgets",
+      "verb": "deletecollection",
+      "parent_resource": "poddisruptionbudgets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:poddisruptionbudgets:get",
+      "resource": "poddisruptionbudgets",
+      "verb": "get",
+      "parent_resource": "poddisruptionbudgets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:poddisruptionbudgets:list",
+      "resource": "poddisruptionbudgets",
+      "verb": "list",
+      "parent_resource": "poddisruptionbudgets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:poddisruptionbudgets:update",
+      "resource": "poddisruptionbudgets",
+      "verb": "update",
+      "parent_resource": "poddisruptionbudgets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:poddisruptionbudgets:watch",
+      "resource": "poddisruptionbudgets",
+      "verb": "watch",
+      "parent_resource": "poddisruptionbudgets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:poddisruptionbudgets:patch",
+      "resource": "poddisruptionbudgets",
+      "verb": "patch",
+      "parent_resource": "poddisruptionbudgets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:tokenreviews:create",
+      "resource": "tokenreviews",
+      "verb": "create",
+      "parent_resource": "tokenreviews",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:selfsubjectreviews:create",
+      "resource": "selfsubjectreviews",
+      "verb": "create",
+      "parent_resource": "selfsubjectreviews",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:pods/status:get",
+      "resource": "pods/status",
+      "verb": "get",
+      "parent_resource": "pods",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:pods/status:update",
+      "resource": "pods/status",
+      "verb": "update",
+      "parent_resource": "pods",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:pods/status:patch",
+      "resource": "pods/status",
+      "verb": "patch",
+      "parent_resource": "pods",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:pods/exec:get",
+      "resource": "pods/exec",
+      "verb": "get",
+      "parent_resource": "pods",
+      "subresource": "exec",
+      "is_subresource": true,
+      "action_primitive": "exec_into_pod",
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:pods/exec:create",
+      "resource": "pods/exec",
+      "verb": "create",
+      "parent_resource": "pods",
+      "subresource": "exec",
+      "is_subresource": true,
+      "action_primitive": "exec_into_pod",
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclaims:create",
+      "resource": "resourceclaims",
+      "verb": "create",
+      "parent_resource": "resourceclaims",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclaims:delete",
+      "resource": "resourceclaims",
+      "verb": "delete",
+      "parent_resource": "resourceclaims",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclaims:deletecollection",
+      "resource": "resourceclaims",
+      "verb": "deletecollection",
+      "parent_resource": "resourceclaims",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclaims:get",
+      "resource": "resourceclaims",
+      "verb": "get",
+      "parent_resource": "resourceclaims",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclaims:list",
+      "resource": "resourceclaims",
+      "verb": "list",
+      "parent_resource": "resourceclaims",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclaims:update",
+      "resource": "resourceclaims",
+      "verb": "update",
+      "parent_resource": "resourceclaims",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclaims:watch",
+      "resource": "resourceclaims",
+      "verb": "watch",
+      "parent_resource": "resourceclaims",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclaims:patch",
+      "resource": "resourceclaims",
+      "verb": "patch",
+      "parent_resource": "resourceclaims",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageversions:create",
+      "resource": "storageversions",
+      "verb": "create",
+      "parent_resource": "storageversions",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageversions:delete",
+      "resource": "storageversions",
+      "verb": "delete",
+      "parent_resource": "storageversions",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageversions:deletecollection",
+      "resource": "storageversions",
+      "verb": "deletecollection",
+      "parent_resource": "storageversions",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageversions:get",
+      "resource": "storageversions",
+      "verb": "get",
+      "parent_resource": "storageversions",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageversions:list",
+      "resource": "storageversions",
+      "verb": "list",
+      "parent_resource": "storageversions",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageversions:update",
+      "resource": "storageversions",
+      "verb": "update",
+      "parent_resource": "storageversions",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageversions:watch",
+      "resource": "storageversions",
+      "verb": "watch",
+      "parent_resource": "storageversions",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageversions:patch",
+      "resource": "storageversions",
+      "verb": "patch",
+      "parent_resource": "storageversions",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:pods/log:get",
+      "resource": "pods/log",
+      "verb": "get",
+      "parent_resource": "pods",
+      "subresource": "log",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:services/proxy:get",
+      "resource": "services/proxy",
+      "verb": "get",
+      "parent_resource": "services",
+      "subresource": "proxy",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:services/proxy:create",
+      "resource": "services/proxy",
+      "verb": "create",
+      "parent_resource": "services",
+      "subresource": "proxy",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:services/proxy:update",
+      "resource": "services/proxy",
+      "verb": "update",
+      "parent_resource": "services",
+      "subresource": "proxy",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:services/proxy:patch",
+      "resource": "services/proxy",
+      "verb": "patch",
+      "parent_resource": "services",
+      "subresource": "proxy",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:services/proxy:delete",
+      "resource": "services/proxy",
+      "verb": "delete",
+      "parent_resource": "services",
+      "subresource": "proxy",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:nodes:create",
+      "resource": "nodes",
+      "verb": "create",
+      "parent_resource": "nodes",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:nodes:delete",
+      "resource": "nodes",
+      "verb": "delete",
+      "parent_resource": "nodes",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:nodes:deletecollection",
+      "resource": "nodes",
+      "verb": "deletecollection",
+      "parent_resource": "nodes",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:nodes:get",
+      "resource": "nodes",
+      "verb": "get",
+      "parent_resource": "nodes",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": "read_node",
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:nodes:list",
+      "resource": "nodes",
+      "verb": "list",
+      "parent_resource": "nodes",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:nodes:update",
+      "resource": "nodes",
+      "verb": "update",
+      "parent_resource": "nodes",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:nodes:watch",
+      "resource": "nodes",
+      "verb": "watch",
+      "parent_resource": "nodes",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:nodes:patch",
+      "resource": "nodes",
+      "verb": "patch",
+      "parent_resource": "nodes",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:cronjobs/status:get",
+      "resource": "cronjobs/status",
+      "verb": "get",
+      "parent_resource": "cronjobs",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:cronjobs/status:update",
+      "resource": "cronjobs/status",
+      "verb": "update",
+      "parent_resource": "cronjobs",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:cronjobs/status:patch",
+      "resource": "cronjobs/status",
+      "verb": "patch",
+      "parent_resource": "cronjobs",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:componentstatuses:get",
+      "resource": "componentstatuses",
+      "verb": "get",
+      "parent_resource": "componentstatuses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:componentstatuses:list",
+      "resource": "componentstatuses",
+      "verb": "list",
+      "parent_resource": "componentstatuses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:ipaddresses:create",
+      "resource": "ipaddresses",
+      "verb": "create",
+      "parent_resource": "ipaddresses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:ipaddresses:delete",
+      "resource": "ipaddresses",
+      "verb": "delete",
+      "parent_resource": "ipaddresses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:ipaddresses:deletecollection",
+      "resource": "ipaddresses",
+      "verb": "deletecollection",
+      "parent_resource": "ipaddresses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:ipaddresses:get",
+      "resource": "ipaddresses",
+      "verb": "get",
+      "parent_resource": "ipaddresses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:ipaddresses:list",
+      "resource": "ipaddresses",
+      "verb": "list",
+      "parent_resource": "ipaddresses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:ipaddresses:update",
+      "resource": "ipaddresses",
+      "verb": "update",
+      "parent_resource": "ipaddresses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:ipaddresses:watch",
+      "resource": "ipaddresses",
+      "verb": "watch",
+      "parent_resource": "ipaddresses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:ipaddresses:patch",
+      "resource": "ipaddresses",
+      "verb": "patch",
+      "parent_resource": "ipaddresses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:volumeattachments/status:get",
+      "resource": "volumeattachments/status",
+      "verb": "get",
+      "parent_resource": "volumeattachments",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:volumeattachments/status:update",
+      "resource": "volumeattachments/status",
+      "verb": "update",
+      "parent_resource": "volumeattachments",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:volumeattachments/status:patch",
+      "resource": "volumeattachments/status",
+      "verb": "patch",
+      "parent_resource": "volumeattachments",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:servicecidrs:create",
+      "resource": "servicecidrs",
+      "verb": "create",
+      "parent_resource": "servicecidrs",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:servicecidrs:delete",
+      "resource": "servicecidrs",
+      "verb": "delete",
+      "parent_resource": "servicecidrs",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:servicecidrs:deletecollection",
+      "resource": "servicecidrs",
+      "verb": "deletecollection",
+      "parent_resource": "servicecidrs",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:servicecidrs:get",
+      "resource": "servicecidrs",
+      "verb": "get",
+      "parent_resource": "servicecidrs",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:servicecidrs:list",
+      "resource": "servicecidrs",
+      "verb": "list",
+      "parent_resource": "servicecidrs",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:servicecidrs:update",
+      "resource": "servicecidrs",
+      "verb": "update",
+      "parent_resource": "servicecidrs",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:servicecidrs:watch",
+      "resource": "servicecidrs",
+      "verb": "watch",
+      "parent_resource": "servicecidrs",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:servicecidrs:patch",
+      "resource": "servicecidrs",
+      "verb": "patch",
+      "parent_resource": "servicecidrs",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:csistoragecapacities:create",
+      "resource": "csistoragecapacities",
+      "verb": "create",
+      "parent_resource": "csistoragecapacities",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:csistoragecapacities:delete",
+      "resource": "csistoragecapacities",
+      "verb": "delete",
+      "parent_resource": "csistoragecapacities",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:csistoragecapacities:deletecollection",
+      "resource": "csistoragecapacities",
+      "verb": "deletecollection",
+      "parent_resource": "csistoragecapacities",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:csistoragecapacities:get",
+      "resource": "csistoragecapacities",
+      "verb": "get",
+      "parent_resource": "csistoragecapacities",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:csistoragecapacities:list",
+      "resource": "csistoragecapacities",
+      "verb": "list",
+      "parent_resource": "csistoragecapacities",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:csistoragecapacities:update",
+      "resource": "csistoragecapacities",
+      "verb": "update",
+      "parent_resource": "csistoragecapacities",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:csistoragecapacities:watch",
+      "resource": "csistoragecapacities",
+      "verb": "watch",
+      "parent_resource": "csistoragecapacities",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:csistoragecapacities:patch",
+      "resource": "csistoragecapacities",
+      "verb": "patch",
+      "parent_resource": "csistoragecapacities",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:deployments/status:get",
+      "resource": "deployments/status",
+      "verb": "get",
+      "parent_resource": "deployments",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:deployments/status:update",
+      "resource": "deployments/status",
+      "verb": "update",
+      "parent_resource": "deployments",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:deployments/status:patch",
+      "resource": "deployments/status",
+      "verb": "patch",
+      "parent_resource": "deployments",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:certificatesigningrequests/approval:get",
+      "resource": "certificatesigningrequests/approval",
+      "verb": "get",
+      "parent_resource": "certificatesigningrequests",
+      "subresource": "approval",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:certificatesigningrequests/approval:update",
+      "resource": "certificatesigningrequests/approval",
+      "verb": "update",
+      "parent_resource": "certificatesigningrequests",
+      "subresource": "approval",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:certificatesigningrequests/approval:patch",
+      "resource": "certificatesigningrequests/approval",
+      "verb": "patch",
+      "parent_resource": "certificatesigningrequests",
+      "subresource": "approval",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:pods:create",
+      "resource": "pods",
+      "verb": "create",
+      "parent_resource": "pods",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": "create_pod",
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:pods:delete",
+      "resource": "pods",
+      "verb": "delete",
+      "parent_resource": "pods",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": "delete_pod",
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:pods:deletecollection",
+      "resource": "pods",
+      "verb": "deletecollection",
+      "parent_resource": "pods",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:pods:get",
+      "resource": "pods",
+      "verb": "get",
+      "parent_resource": "pods",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": "read_pod_spec",
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:pods:list",
+      "resource": "pods",
+      "verb": "list",
+      "parent_resource": "pods",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": "enumerate_pods",
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:pods:update",
+      "resource": "pods",
+      "verb": "update",
+      "parent_resource": "pods",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:pods:watch",
+      "resource": "pods",
+      "verb": "watch",
+      "parent_resource": "pods",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:pods:patch",
+      "resource": "pods",
+      "verb": "patch",
+      "parent_resource": "pods",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:persistentvolumes/status:get",
+      "resource": "persistentvolumes/status",
+      "verb": "get",
+      "parent_resource": "persistentvolumes",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:persistentvolumes/status:update",
+      "resource": "persistentvolumes/status",
+      "verb": "update",
+      "parent_resource": "persistentvolumes",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:persistentvolumes/status:patch",
+      "resource": "persistentvolumes/status",
+      "verb": "patch",
+      "parent_resource": "persistentvolumes",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:daemonsets/status:get",
+      "resource": "daemonsets/status",
+      "verb": "get",
+      "parent_resource": "daemonsets",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:daemonsets/status:update",
+      "resource": "daemonsets/status",
+      "verb": "update",
+      "parent_resource": "daemonsets",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:daemonsets/status:patch",
+      "resource": "daemonsets/status",
+      "verb": "patch",
+      "parent_resource": "daemonsets",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:pods/binding:create",
+      "resource": "pods/binding",
+      "verb": "create",
+      "parent_resource": "pods",
+      "subresource": "binding",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:servicecidrs/status:get",
+      "resource": "servicecidrs/status",
+      "verb": "get",
+      "parent_resource": "servicecidrs",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:servicecidrs/status:update",
+      "resource": "servicecidrs/status",
+      "verb": "update",
+      "parent_resource": "servicecidrs",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:servicecidrs/status:patch",
+      "resource": "servicecidrs/status",
+      "verb": "patch",
+      "parent_resource": "servicecidrs",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:configmaps:create",
+      "resource": "configmaps",
+      "verb": "create",
+      "parent_resource": "configmaps",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:configmaps:delete",
+      "resource": "configmaps",
+      "verb": "delete",
+      "parent_resource": "configmaps",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:configmaps:deletecollection",
+      "resource": "configmaps",
+      "verb": "deletecollection",
+      "parent_resource": "configmaps",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:configmaps:get",
+      "resource": "configmaps",
+      "verb": "get",
+      "parent_resource": "configmaps",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:configmaps:list",
+      "resource": "configmaps",
+      "verb": "list",
+      "parent_resource": "configmaps",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:configmaps:update",
+      "resource": "configmaps",
+      "verb": "update",
+      "parent_resource": "configmaps",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:configmaps:watch",
+      "resource": "configmaps",
+      "verb": "watch",
+      "parent_resource": "configmaps",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:configmaps:patch",
+      "resource": "configmaps",
+      "verb": "patch",
+      "parent_resource": "configmaps",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:volumeattachments:create",
+      "resource": "volumeattachments",
+      "verb": "create",
+      "parent_resource": "volumeattachments",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:volumeattachments:delete",
+      "resource": "volumeattachments",
+      "verb": "delete",
+      "parent_resource": "volumeattachments",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:volumeattachments:deletecollection",
+      "resource": "volumeattachments",
+      "verb": "deletecollection",
+      "parent_resource": "volumeattachments",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:volumeattachments:get",
+      "resource": "volumeattachments",
+      "verb": "get",
+      "parent_resource": "volumeattachments",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:volumeattachments:list",
+      "resource": "volumeattachments",
+      "verb": "list",
+      "parent_resource": "volumeattachments",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:volumeattachments:update",
+      "resource": "volumeattachments",
+      "verb": "update",
+      "parent_resource": "volumeattachments",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:volumeattachments:watch",
+      "resource": "volumeattachments",
+      "verb": "watch",
+      "parent_resource": "volumeattachments",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:volumeattachments:patch",
+      "resource": "volumeattachments",
+      "verb": "patch",
+      "parent_resource": "volumeattachments",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:validatingwebhookconfigurations:create",
+      "resource": "validatingwebhookconfigurations",
+      "verb": "create",
+      "parent_resource": "validatingwebhookconfigurations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:validatingwebhookconfigurations:delete",
+      "resource": "validatingwebhookconfigurations",
+      "verb": "delete",
+      "parent_resource": "validatingwebhookconfigurations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:validatingwebhookconfigurations:deletecollection",
+      "resource": "validatingwebhookconfigurations",
+      "verb": "deletecollection",
+      "parent_resource": "validatingwebhookconfigurations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:validatingwebhookconfigurations:get",
+      "resource": "validatingwebhookconfigurations",
+      "verb": "get",
+      "parent_resource": "validatingwebhookconfigurations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:validatingwebhookconfigurations:list",
+      "resource": "validatingwebhookconfigurations",
+      "verb": "list",
+      "parent_resource": "validatingwebhookconfigurations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:validatingwebhookconfigurations:update",
+      "resource": "validatingwebhookconfigurations",
+      "verb": "update",
+      "parent_resource": "validatingwebhookconfigurations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:validatingwebhookconfigurations:watch",
+      "resource": "validatingwebhookconfigurations",
+      "verb": "watch",
+      "parent_resource": "validatingwebhookconfigurations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:validatingwebhookconfigurations:patch",
+      "resource": "validatingwebhookconfigurations",
+      "verb": "patch",
+      "parent_resource": "validatingwebhookconfigurations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:deployments:create",
+      "resource": "deployments",
+      "verb": "create",
+      "parent_resource": "deployments",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": "create_deployment",
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:deployments:delete",
+      "resource": "deployments",
+      "verb": "delete",
+      "parent_resource": "deployments",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:deployments:deletecollection",
+      "resource": "deployments",
+      "verb": "deletecollection",
+      "parent_resource": "deployments",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:deployments:get",
+      "resource": "deployments",
+      "verb": "get",
+      "parent_resource": "deployments",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:deployments:list",
+      "resource": "deployments",
+      "verb": "list",
+      "parent_resource": "deployments",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:deployments:update",
+      "resource": "deployments",
+      "verb": "update",
+      "parent_resource": "deployments",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:deployments:watch",
+      "resource": "deployments",
+      "verb": "watch",
+      "parent_resource": "deployments",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:deployments:patch",
+      "resource": "deployments",
+      "verb": "patch",
+      "parent_resource": "deployments",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:horizontalpodautoscalers/status:get",
+      "resource": "horizontalpodautoscalers/status",
+      "verb": "get",
+      "parent_resource": "horizontalpodautoscalers",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:horizontalpodautoscalers/status:update",
+      "resource": "horizontalpodautoscalers/status",
+      "verb": "update",
+      "parent_resource": "horizontalpodautoscalers",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:horizontalpodautoscalers/status:patch",
+      "resource": "horizontalpodautoscalers/status",
+      "verb": "patch",
+      "parent_resource": "horizontalpodautoscalers",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:replicationcontrollers:create",
+      "resource": "replicationcontrollers",
+      "verb": "create",
+      "parent_resource": "replicationcontrollers",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:replicationcontrollers:delete",
+      "resource": "replicationcontrollers",
+      "verb": "delete",
+      "parent_resource": "replicationcontrollers",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:replicationcontrollers:deletecollection",
+      "resource": "replicationcontrollers",
+      "verb": "deletecollection",
+      "parent_resource": "replicationcontrollers",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:replicationcontrollers:get",
+      "resource": "replicationcontrollers",
+      "verb": "get",
+      "parent_resource": "replicationcontrollers",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:replicationcontrollers:list",
+      "resource": "replicationcontrollers",
+      "verb": "list",
+      "parent_resource": "replicationcontrollers",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:replicationcontrollers:update",
+      "resource": "replicationcontrollers",
+      "verb": "update",
+      "parent_resource": "replicationcontrollers",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:replicationcontrollers:watch",
+      "resource": "replicationcontrollers",
+      "verb": "watch",
+      "parent_resource": "replicationcontrollers",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:replicationcontrollers:patch",
+      "resource": "replicationcontrollers",
+      "verb": "patch",
+      "parent_resource": "replicationcontrollers",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:validatingadmissionpolicies/status:get",
+      "resource": "validatingadmissionpolicies/status",
+      "verb": "get",
+      "parent_resource": "validatingadmissionpolicies",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:validatingadmissionpolicies/status:update",
+      "resource": "validatingadmissionpolicies/status",
+      "verb": "update",
+      "parent_resource": "validatingadmissionpolicies",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:validatingadmissionpolicies/status:patch",
+      "resource": "validatingadmissionpolicies/status",
+      "verb": "patch",
+      "parent_resource": "validatingadmissionpolicies",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:replicasets:create",
+      "resource": "replicasets",
+      "verb": "create",
+      "parent_resource": "replicasets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": "create_replicaset",
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:replicasets:delete",
+      "resource": "replicasets",
+      "verb": "delete",
+      "parent_resource": "replicasets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:replicasets:deletecollection",
+      "resource": "replicasets",
+      "verb": "deletecollection",
+      "parent_resource": "replicasets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:replicasets:get",
+      "resource": "replicasets",
+      "verb": "get",
+      "parent_resource": "replicasets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:replicasets:list",
+      "resource": "replicasets",
+      "verb": "list",
+      "parent_resource": "replicasets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:replicasets:update",
+      "resource": "replicasets",
+      "verb": "update",
+      "parent_resource": "replicasets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:replicasets:watch",
+      "resource": "replicasets",
+      "verb": "watch",
+      "parent_resource": "replicasets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:replicasets:patch",
+      "resource": "replicasets",
+      "verb": "patch",
+      "parent_resource": "replicasets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:namespaces/status:get",
+      "resource": "namespaces/status",
+      "verb": "get",
+      "parent_resource": "namespaces",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:namespaces/status:update",
+      "resource": "namespaces/status",
+      "verb": "update",
+      "parent_resource": "namespaces",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:namespaces/status:patch",
+      "resource": "namespaces/status",
+      "verb": "patch",
+      "parent_resource": "namespaces",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclasses:create",
+      "resource": "resourceclasses",
+      "verb": "create",
+      "parent_resource": "resourceclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclasses:delete",
+      "resource": "resourceclasses",
+      "verb": "delete",
+      "parent_resource": "resourceclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclasses:deletecollection",
+      "resource": "resourceclasses",
+      "verb": "deletecollection",
+      "parent_resource": "resourceclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclasses:get",
+      "resource": "resourceclasses",
+      "verb": "get",
+      "parent_resource": "resourceclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclasses:list",
+      "resource": "resourceclasses",
+      "verb": "list",
+      "parent_resource": "resourceclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclasses:update",
+      "resource": "resourceclasses",
+      "verb": "update",
+      "parent_resource": "resourceclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclasses:watch",
+      "resource": "resourceclasses",
+      "verb": "watch",
+      "parent_resource": "resourceclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclasses:patch",
+      "resource": "resourceclasses",
+      "verb": "patch",
+      "parent_resource": "resourceclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:pods/portforward:get",
+      "resource": "pods/portforward",
+      "verb": "get",
+      "parent_resource": "pods",
+      "subresource": "portforward",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:pods/portforward:create",
+      "resource": "pods/portforward",
+      "verb": "create",
+      "parent_resource": "pods",
+      "subresource": "portforward",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:persistentvolumeclaims:create",
+      "resource": "persistentvolumeclaims",
+      "verb": "create",
+      "parent_resource": "persistentvolumeclaims",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:persistentvolumeclaims:delete",
+      "resource": "persistentvolumeclaims",
+      "verb": "delete",
+      "parent_resource": "persistentvolumeclaims",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:persistentvolumeclaims:deletecollection",
+      "resource": "persistentvolumeclaims",
+      "verb": "deletecollection",
+      "parent_resource": "persistentvolumeclaims",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:persistentvolumeclaims:get",
+      "resource": "persistentvolumeclaims",
+      "verb": "get",
+      "parent_resource": "persistentvolumeclaims",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:persistentvolumeclaims:list",
+      "resource": "persistentvolumeclaims",
+      "verb": "list",
+      "parent_resource": "persistentvolumeclaims",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:persistentvolumeclaims:update",
+      "resource": "persistentvolumeclaims",
+      "verb": "update",
+      "parent_resource": "persistentvolumeclaims",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:persistentvolumeclaims:watch",
+      "resource": "persistentvolumeclaims",
+      "verb": "watch",
+      "parent_resource": "persistentvolumeclaims",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:persistentvolumeclaims:patch",
+      "resource": "persistentvolumeclaims",
+      "verb": "patch",
+      "parent_resource": "persistentvolumeclaims",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:secrets:create",
+      "resource": "secrets",
+      "verb": "create",
+      "parent_resource": "secrets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:secrets:delete",
+      "resource": "secrets",
+      "verb": "delete",
+      "parent_resource": "secrets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:secrets:deletecollection",
+      "resource": "secrets",
+      "verb": "deletecollection",
+      "parent_resource": "secrets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:secrets:get",
+      "resource": "secrets",
+      "verb": "get",
+      "parent_resource": "secrets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": "read_secret",
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:secrets:list",
+      "resource": "secrets",
+      "verb": "list",
+      "parent_resource": "secrets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": "enumerate_secrets",
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:secrets:update",
+      "resource": "secrets",
+      "verb": "update",
+      "parent_resource": "secrets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:secrets:watch",
+      "resource": "secrets",
+      "verb": "watch",
+      "parent_resource": "secrets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:secrets:patch",
+      "resource": "secrets",
+      "verb": "patch",
+      "parent_resource": "secrets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:rolebindings:create",
+      "resource": "rolebindings",
+      "verb": "create",
+      "parent_resource": "rolebindings",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": "bind_role",
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:rolebindings:delete",
+      "resource": "rolebindings",
+      "verb": "delete",
+      "parent_resource": "rolebindings",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:rolebindings:deletecollection",
+      "resource": "rolebindings",
+      "verb": "deletecollection",
+      "parent_resource": "rolebindings",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:rolebindings:get",
+      "resource": "rolebindings",
+      "verb": "get",
+      "parent_resource": "rolebindings",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:rolebindings:list",
+      "resource": "rolebindings",
+      "verb": "list",
+      "parent_resource": "rolebindings",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:rolebindings:update",
+      "resource": "rolebindings",
+      "verb": "update",
+      "parent_resource": "rolebindings",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": "bind_role",
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:rolebindings:watch",
+      "resource": "rolebindings",
+      "verb": "watch",
+      "parent_resource": "rolebindings",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:rolebindings:patch",
+      "resource": "rolebindings",
+      "verb": "patch",
+      "parent_resource": "rolebindings",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": "bind_role",
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:services/status:get",
+      "resource": "services/status",
+      "verb": "get",
+      "parent_resource": "services",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:services/status:update",
+      "resource": "services/status",
+      "verb": "update",
+      "parent_resource": "services",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:services/status:patch",
+      "resource": "services/status",
+      "verb": "patch",
+      "parent_resource": "services",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:ingressclasses:create",
+      "resource": "ingressclasses",
+      "verb": "create",
+      "parent_resource": "ingressclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:ingressclasses:delete",
+      "resource": "ingressclasses",
+      "verb": "delete",
+      "parent_resource": "ingressclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:ingressclasses:deletecollection",
+      "resource": "ingressclasses",
+      "verb": "deletecollection",
+      "parent_resource": "ingressclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:ingressclasses:get",
+      "resource": "ingressclasses",
+      "verb": "get",
+      "parent_resource": "ingressclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:ingressclasses:list",
+      "resource": "ingressclasses",
+      "verb": "list",
+      "parent_resource": "ingressclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:ingressclasses:update",
+      "resource": "ingressclasses",
+      "verb": "update",
+      "parent_resource": "ingressclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:ingressclasses:watch",
+      "resource": "ingressclasses",
+      "verb": "watch",
+      "parent_resource": "ingressclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:ingressclasses:patch",
+      "resource": "ingressclasses",
+      "verb": "patch",
+      "parent_resource": "ingressclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:bindings:create",
+      "resource": "bindings",
+      "verb": "create",
+      "parent_resource": "bindings",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:persistentvolumeclaims/status:get",
+      "resource": "persistentvolumeclaims/status",
+      "verb": "get",
+      "parent_resource": "persistentvolumeclaims",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:persistentvolumeclaims/status:update",
+      "resource": "persistentvolumeclaims/status",
+      "verb": "update",
+      "parent_resource": "persistentvolumeclaims",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:persistentvolumeclaims/status:patch",
+      "resource": "persistentvolumeclaims/status",
+      "verb": "patch",
+      "parent_resource": "persistentvolumeclaims",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:roles:create",
+      "resource": "roles",
+      "verb": "create",
+      "parent_resource": "roles",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:roles:delete",
+      "resource": "roles",
+      "verb": "delete",
+      "parent_resource": "roles",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:roles:deletecollection",
+      "resource": "roles",
+      "verb": "deletecollection",
+      "parent_resource": "roles",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:roles:get",
+      "resource": "roles",
+      "verb": "get",
+      "parent_resource": "roles",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:roles:list",
+      "resource": "roles",
+      "verb": "list",
+      "parent_resource": "roles",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:roles:update",
+      "resource": "roles",
+      "verb": "update",
+      "parent_resource": "roles",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:roles:watch",
+      "resource": "roles",
+      "verb": "watch",
+      "parent_resource": "roles",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:roles:patch",
+      "resource": "roles",
+      "verb": "patch",
+      "parent_resource": "roles",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:jobs:create",
+      "resource": "jobs",
+      "verb": "create",
+      "parent_resource": "jobs",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": "create_job",
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:jobs:delete",
+      "resource": "jobs",
+      "verb": "delete",
+      "parent_resource": "jobs",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:jobs:deletecollection",
+      "resource": "jobs",
+      "verb": "deletecollection",
+      "parent_resource": "jobs",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:jobs:get",
+      "resource": "jobs",
+      "verb": "get",
+      "parent_resource": "jobs",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:jobs:list",
+      "resource": "jobs",
+      "verb": "list",
+      "parent_resource": "jobs",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:jobs:update",
+      "resource": "jobs",
+      "verb": "update",
+      "parent_resource": "jobs",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:jobs:watch",
+      "resource": "jobs",
+      "verb": "watch",
+      "parent_resource": "jobs",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:jobs:patch",
+      "resource": "jobs",
+      "verb": "patch",
+      "parent_resource": "jobs",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageversionmigrations/status:get",
+      "resource": "storageversionmigrations/status",
+      "verb": "get",
+      "parent_resource": "storageversionmigrations",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageversionmigrations/status:update",
+      "resource": "storageversionmigrations/status",
+      "verb": "update",
+      "parent_resource": "storageversionmigrations",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageversionmigrations/status:patch",
+      "resource": "storageversionmigrations/status",
+      "verb": "patch",
+      "parent_resource": "storageversionmigrations",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:pods/proxy:get",
+      "resource": "pods/proxy",
+      "verb": "get",
+      "parent_resource": "pods",
+      "subresource": "proxy",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:pods/proxy:create",
+      "resource": "pods/proxy",
+      "verb": "create",
+      "parent_resource": "pods",
+      "subresource": "proxy",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:pods/proxy:update",
+      "resource": "pods/proxy",
+      "verb": "update",
+      "parent_resource": "pods",
+      "subresource": "proxy",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:pods/proxy:patch",
+      "resource": "pods/proxy",
+      "verb": "patch",
+      "parent_resource": "pods",
+      "subresource": "proxy",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:pods/proxy:delete",
+      "resource": "pods/proxy",
+      "verb": "delete",
+      "parent_resource": "pods",
+      "subresource": "proxy",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:serviceaccounts/token:create",
+      "resource": "serviceaccounts/token",
+      "verb": "create",
+      "parent_resource": "serviceaccounts",
+      "subresource": "token",
+      "is_subresource": true,
+      "action_primitive": "mint_sa_token",
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:statefulsets/status:get",
+      "resource": "statefulsets/status",
+      "verb": "get",
+      "parent_resource": "statefulsets",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:statefulsets/status:update",
+      "resource": "statefulsets/status",
+      "verb": "update",
+      "parent_resource": "statefulsets",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:statefulsets/status:patch",
+      "resource": "statefulsets/status",
+      "verb": "patch",
+      "parent_resource": "statefulsets",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:ingresses/status:get",
+      "resource": "ingresses/status",
+      "verb": "get",
+      "parent_resource": "ingresses",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:ingresses/status:update",
+      "resource": "ingresses/status",
+      "verb": "update",
+      "parent_resource": "ingresses",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:ingresses/status:patch",
+      "resource": "ingresses/status",
+      "verb": "patch",
+      "parent_resource": "ingresses",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclaims/status:get",
+      "resource": "resourceclaims/status",
+      "verb": "get",
+      "parent_resource": "resourceclaims",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclaims/status:update",
+      "resource": "resourceclaims/status",
+      "verb": "update",
+      "parent_resource": "resourceclaims",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclaims/status:patch",
+      "resource": "resourceclaims/status",
+      "verb": "patch",
+      "parent_resource": "resourceclaims",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageclasses:create",
+      "resource": "storageclasses",
+      "verb": "create",
+      "parent_resource": "storageclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageclasses:delete",
+      "resource": "storageclasses",
+      "verb": "delete",
+      "parent_resource": "storageclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageclasses:deletecollection",
+      "resource": "storageclasses",
+      "verb": "deletecollection",
+      "parent_resource": "storageclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageclasses:get",
+      "resource": "storageclasses",
+      "verb": "get",
+      "parent_resource": "storageclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageclasses:list",
+      "resource": "storageclasses",
+      "verb": "list",
+      "parent_resource": "storageclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageclasses:update",
+      "resource": "storageclasses",
+      "verb": "update",
+      "parent_resource": "storageclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageclasses:watch",
+      "resource": "storageclasses",
+      "verb": "watch",
+      "parent_resource": "storageclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageclasses:patch",
+      "resource": "storageclasses",
+      "verb": "patch",
+      "parent_resource": "storageclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:prioritylevelconfigurations:create",
+      "resource": "prioritylevelconfigurations",
+      "verb": "create",
+      "parent_resource": "prioritylevelconfigurations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:prioritylevelconfigurations:delete",
+      "resource": "prioritylevelconfigurations",
+      "verb": "delete",
+      "parent_resource": "prioritylevelconfigurations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:prioritylevelconfigurations:deletecollection",
+      "resource": "prioritylevelconfigurations",
+      "verb": "deletecollection",
+      "parent_resource": "prioritylevelconfigurations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:prioritylevelconfigurations:get",
+      "resource": "prioritylevelconfigurations",
+      "verb": "get",
+      "parent_resource": "prioritylevelconfigurations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:prioritylevelconfigurations:list",
+      "resource": "prioritylevelconfigurations",
+      "verb": "list",
+      "parent_resource": "prioritylevelconfigurations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:prioritylevelconfigurations:update",
+      "resource": "prioritylevelconfigurations",
+      "verb": "update",
+      "parent_resource": "prioritylevelconfigurations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:prioritylevelconfigurations:watch",
+      "resource": "prioritylevelconfigurations",
+      "verb": "watch",
+      "parent_resource": "prioritylevelconfigurations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:prioritylevelconfigurations:patch",
+      "resource": "prioritylevelconfigurations",
+      "verb": "patch",
+      "parent_resource": "prioritylevelconfigurations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:podschedulingcontexts/status:get",
+      "resource": "podschedulingcontexts/status",
+      "verb": "get",
+      "parent_resource": "podschedulingcontexts",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:podschedulingcontexts/status:update",
+      "resource": "podschedulingcontexts/status",
+      "verb": "update",
+      "parent_resource": "podschedulingcontexts",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:podschedulingcontexts/status:patch",
+      "resource": "podschedulingcontexts/status",
+      "verb": "patch",
+      "parent_resource": "podschedulingcontexts",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageversionmigrations:create",
+      "resource": "storageversionmigrations",
+      "verb": "create",
+      "parent_resource": "storageversionmigrations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageversionmigrations:delete",
+      "resource": "storageversionmigrations",
+      "verb": "delete",
+      "parent_resource": "storageversionmigrations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageversionmigrations:deletecollection",
+      "resource": "storageversionmigrations",
+      "verb": "deletecollection",
+      "parent_resource": "storageversionmigrations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageversionmigrations:get",
+      "resource": "storageversionmigrations",
+      "verb": "get",
+      "parent_resource": "storageversionmigrations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageversionmigrations:list",
+      "resource": "storageversionmigrations",
+      "verb": "list",
+      "parent_resource": "storageversionmigrations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageversionmigrations:update",
+      "resource": "storageversionmigrations",
+      "verb": "update",
+      "parent_resource": "storageversionmigrations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageversionmigrations:watch",
+      "resource": "storageversionmigrations",
+      "verb": "watch",
+      "parent_resource": "storageversionmigrations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageversionmigrations:patch",
+      "resource": "storageversionmigrations",
+      "verb": "patch",
+      "parent_resource": "storageversionmigrations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:statefulsets:create",
+      "resource": "statefulsets",
+      "verb": "create",
+      "parent_resource": "statefulsets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": "create_statefulset",
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:statefulsets:delete",
+      "resource": "statefulsets",
+      "verb": "delete",
+      "parent_resource": "statefulsets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:statefulsets:deletecollection",
+      "resource": "statefulsets",
+      "verb": "deletecollection",
+      "parent_resource": "statefulsets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:statefulsets:get",
+      "resource": "statefulsets",
+      "verb": "get",
+      "parent_resource": "statefulsets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:statefulsets:list",
+      "resource": "statefulsets",
+      "verb": "list",
+      "parent_resource": "statefulsets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:statefulsets:update",
+      "resource": "statefulsets",
+      "verb": "update",
+      "parent_resource": "statefulsets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:statefulsets:watch",
+      "resource": "statefulsets",
+      "verb": "watch",
+      "parent_resource": "statefulsets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:statefulsets:patch",
+      "resource": "statefulsets",
+      "verb": "patch",
+      "parent_resource": "statefulsets",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:selfsubjectaccessreviews:create",
+      "resource": "selfsubjectaccessreviews",
+      "verb": "create",
+      "parent_resource": "selfsubjectaccessreviews",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:endpoints:create",
+      "resource": "endpoints",
+      "verb": "create",
+      "parent_resource": "endpoints",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:endpoints:delete",
+      "resource": "endpoints",
+      "verb": "delete",
+      "parent_resource": "endpoints",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:endpoints:deletecollection",
+      "resource": "endpoints",
+      "verb": "deletecollection",
+      "parent_resource": "endpoints",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:endpoints:get",
+      "resource": "endpoints",
+      "verb": "get",
+      "parent_resource": "endpoints",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:endpoints:list",
+      "resource": "endpoints",
+      "verb": "list",
+      "parent_resource": "endpoints",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:endpoints:update",
+      "resource": "endpoints",
+      "verb": "update",
+      "parent_resource": "endpoints",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:endpoints:watch",
+      "resource": "endpoints",
+      "verb": "watch",
+      "parent_resource": "endpoints",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:endpoints:patch",
+      "resource": "endpoints",
+      "verb": "patch",
+      "parent_resource": "endpoints",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:namespaces/finalize:update",
+      "resource": "namespaces/finalize",
+      "verb": "update",
+      "parent_resource": "namespaces",
+      "subresource": "finalize",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:networkpolicies:create",
+      "resource": "networkpolicies",
+      "verb": "create",
+      "parent_resource": "networkpolicies",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:networkpolicies:delete",
+      "resource": "networkpolicies",
+      "verb": "delete",
+      "parent_resource": "networkpolicies",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:networkpolicies:deletecollection",
+      "resource": "networkpolicies",
+      "verb": "deletecollection",
+      "parent_resource": "networkpolicies",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:networkpolicies:get",
+      "resource": "networkpolicies",
+      "verb": "get",
+      "parent_resource": "networkpolicies",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:networkpolicies:list",
+      "resource": "networkpolicies",
+      "verb": "list",
+      "parent_resource": "networkpolicies",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:networkpolicies:update",
+      "resource": "networkpolicies",
+      "verb": "update",
+      "parent_resource": "networkpolicies",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:networkpolicies:watch",
+      "resource": "networkpolicies",
+      "verb": "watch",
+      "parent_resource": "networkpolicies",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:networkpolicies:patch",
+      "resource": "networkpolicies",
+      "verb": "patch",
+      "parent_resource": "networkpolicies",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:events:create",
+      "resource": "events",
+      "verb": "create",
+      "parent_resource": "events",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:events:delete",
+      "resource": "events",
+      "verb": "delete",
+      "parent_resource": "events",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:events:deletecollection",
+      "resource": "events",
+      "verb": "deletecollection",
+      "parent_resource": "events",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:events:get",
+      "resource": "events",
+      "verb": "get",
+      "parent_resource": "events",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:events:list",
+      "resource": "events",
+      "verb": "list",
+      "parent_resource": "events",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:events:update",
+      "resource": "events",
+      "verb": "update",
+      "parent_resource": "events",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:events:watch",
+      "resource": "events",
+      "verb": "watch",
+      "parent_resource": "events",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:events:patch",
+      "resource": "events",
+      "verb": "patch",
+      "parent_resource": "events",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourcequotas/status:get",
+      "resource": "resourcequotas/status",
+      "verb": "get",
+      "parent_resource": "resourcequotas",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourcequotas/status:update",
+      "resource": "resourcequotas/status",
+      "verb": "update",
+      "parent_resource": "resourcequotas",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourcequotas/status:patch",
+      "resource": "resourcequotas/status",
+      "verb": "patch",
+      "parent_resource": "resourcequotas",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:prioritylevelconfigurations/status:get",
+      "resource": "prioritylevelconfigurations/status",
+      "verb": "get",
+      "parent_resource": "prioritylevelconfigurations",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:prioritylevelconfigurations/status:update",
+      "resource": "prioritylevelconfigurations/status",
+      "verb": "update",
+      "parent_resource": "prioritylevelconfigurations",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:prioritylevelconfigurations/status:patch",
+      "resource": "prioritylevelconfigurations/status",
+      "verb": "patch",
+      "parent_resource": "prioritylevelconfigurations",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:certificatesigningrequests/status:get",
+      "resource": "certificatesigningrequests/status",
+      "verb": "get",
+      "parent_resource": "certificatesigningrequests",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:certificatesigningrequests/status:update",
+      "resource": "certificatesigningrequests/status",
+      "verb": "update",
+      "parent_resource": "certificatesigningrequests",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:certificatesigningrequests/status:patch",
+      "resource": "certificatesigningrequests/status",
+      "verb": "patch",
+      "parent_resource": "certificatesigningrequests",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:clustertrustbundles:create",
+      "resource": "clustertrustbundles",
+      "verb": "create",
+      "parent_resource": "clustertrustbundles",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:clustertrustbundles:delete",
+      "resource": "clustertrustbundles",
+      "verb": "delete",
+      "parent_resource": "clustertrustbundles",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:clustertrustbundles:deletecollection",
+      "resource": "clustertrustbundles",
+      "verb": "deletecollection",
+      "parent_resource": "clustertrustbundles",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:clustertrustbundles:get",
+      "resource": "clustertrustbundles",
+      "verb": "get",
+      "parent_resource": "clustertrustbundles",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:clustertrustbundles:list",
+      "resource": "clustertrustbundles",
+      "verb": "list",
+      "parent_resource": "clustertrustbundles",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:clustertrustbundles:update",
+      "resource": "clustertrustbundles",
+      "verb": "update",
+      "parent_resource": "clustertrustbundles",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:clustertrustbundles:watch",
+      "resource": "clustertrustbundles",
+      "verb": "watch",
+      "parent_resource": "clustertrustbundles",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:clustertrustbundles:patch",
+      "resource": "clustertrustbundles",
+      "verb": "patch",
+      "parent_resource": "clustertrustbundles",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:pods/ephemeralcontainers:get",
+      "resource": "pods/ephemeralcontainers",
+      "verb": "get",
+      "parent_resource": "pods",
+      "subresource": "ephemeralcontainers",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:pods/ephemeralcontainers:update",
+      "resource": "pods/ephemeralcontainers",
+      "verb": "update",
+      "parent_resource": "pods",
+      "subresource": "ephemeralcontainers",
+      "is_subresource": true,
+      "action_primitive": "inject_ephemeral_container",
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:pods/ephemeralcontainers:patch",
+      "resource": "pods/ephemeralcontainers",
+      "verb": "patch",
+      "parent_resource": "pods",
+      "subresource": "ephemeralcontainers",
+      "is_subresource": true,
+      "action_primitive": "inject_ephemeral_container",
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:replicationcontrollers/status:get",
+      "resource": "replicationcontrollers/status",
+      "verb": "get",
+      "parent_resource": "replicationcontrollers",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:replicationcontrollers/status:update",
+      "resource": "replicationcontrollers/status",
+      "verb": "update",
+      "parent_resource": "replicationcontrollers",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:replicationcontrollers/status:patch",
+      "resource": "replicationcontrollers/status",
+      "verb": "patch",
+      "parent_resource": "replicationcontrollers",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:podschedulingcontexts:create",
+      "resource": "podschedulingcontexts",
+      "verb": "create",
+      "parent_resource": "podschedulingcontexts",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:podschedulingcontexts:delete",
+      "resource": "podschedulingcontexts",
+      "verb": "delete",
+      "parent_resource": "podschedulingcontexts",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:podschedulingcontexts:deletecollection",
+      "resource": "podschedulingcontexts",
+      "verb": "deletecollection",
+      "parent_resource": "podschedulingcontexts",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:podschedulingcontexts:get",
+      "resource": "podschedulingcontexts",
+      "verb": "get",
+      "parent_resource": "podschedulingcontexts",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:podschedulingcontexts:list",
+      "resource": "podschedulingcontexts",
+      "verb": "list",
+      "parent_resource": "podschedulingcontexts",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:podschedulingcontexts:update",
+      "resource": "podschedulingcontexts",
+      "verb": "update",
+      "parent_resource": "podschedulingcontexts",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:podschedulingcontexts:watch",
+      "resource": "podschedulingcontexts",
+      "verb": "watch",
+      "parent_resource": "podschedulingcontexts",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:podschedulingcontexts:patch",
+      "resource": "podschedulingcontexts",
+      "verb": "patch",
+      "parent_resource": "podschedulingcontexts",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:replicasets/scale:get",
+      "resource": "replicasets/scale",
+      "verb": "get",
+      "parent_resource": "replicasets",
+      "subresource": "scale",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:replicasets/scale:update",
+      "resource": "replicasets/scale",
+      "verb": "update",
+      "parent_resource": "replicasets",
+      "subresource": "scale",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:replicasets/scale:patch",
+      "resource": "replicasets/scale",
+      "verb": "patch",
+      "parent_resource": "replicasets",
+      "subresource": "scale",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:controllerrevisions:create",
+      "resource": "controllerrevisions",
+      "verb": "create",
+      "parent_resource": "controllerrevisions",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:controllerrevisions:delete",
+      "resource": "controllerrevisions",
+      "verb": "delete",
+      "parent_resource": "controllerrevisions",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:controllerrevisions:deletecollection",
+      "resource": "controllerrevisions",
+      "verb": "deletecollection",
+      "parent_resource": "controllerrevisions",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:controllerrevisions:get",
+      "resource": "controllerrevisions",
+      "verb": "get",
+      "parent_resource": "controllerrevisions",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:controllerrevisions:list",
+      "resource": "controllerrevisions",
+      "verb": "list",
+      "parent_resource": "controllerrevisions",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:controllerrevisions:update",
+      "resource": "controllerrevisions",
+      "verb": "update",
+      "parent_resource": "controllerrevisions",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:controllerrevisions:watch",
+      "resource": "controllerrevisions",
+      "verb": "watch",
+      "parent_resource": "controllerrevisions",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:controllerrevisions:patch",
+      "resource": "controllerrevisions",
+      "verb": "patch",
+      "parent_resource": "controllerrevisions",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:localsubjectaccessreviews:create",
+      "resource": "localsubjectaccessreviews",
+      "verb": "create",
+      "parent_resource": "localsubjectaccessreviews",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourcequotas:create",
+      "resource": "resourcequotas",
+      "verb": "create",
+      "parent_resource": "resourcequotas",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourcequotas:delete",
+      "resource": "resourcequotas",
+      "verb": "delete",
+      "parent_resource": "resourcequotas",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourcequotas:deletecollection",
+      "resource": "resourcequotas",
+      "verb": "deletecollection",
+      "parent_resource": "resourcequotas",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourcequotas:get",
+      "resource": "resourcequotas",
+      "verb": "get",
+      "parent_resource": "resourcequotas",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourcequotas:list",
+      "resource": "resourcequotas",
+      "verb": "list",
+      "parent_resource": "resourcequotas",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourcequotas:update",
+      "resource": "resourcequotas",
+      "verb": "update",
+      "parent_resource": "resourcequotas",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourcequotas:watch",
+      "resource": "resourcequotas",
+      "verb": "watch",
+      "parent_resource": "resourcequotas",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourcequotas:patch",
+      "resource": "resourcequotas",
+      "verb": "patch",
+      "parent_resource": "resourcequotas",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:csinodes:create",
+      "resource": "csinodes",
+      "verb": "create",
+      "parent_resource": "csinodes",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:csinodes:delete",
+      "resource": "csinodes",
+      "verb": "delete",
+      "parent_resource": "csinodes",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:csinodes:deletecollection",
+      "resource": "csinodes",
+      "verb": "deletecollection",
+      "parent_resource": "csinodes",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:csinodes:get",
+      "resource": "csinodes",
+      "verb": "get",
+      "parent_resource": "csinodes",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:csinodes:list",
+      "resource": "csinodes",
+      "verb": "list",
+      "parent_resource": "csinodes",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:csinodes:update",
+      "resource": "csinodes",
+      "verb": "update",
+      "parent_resource": "csinodes",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:csinodes:watch",
+      "resource": "csinodes",
+      "verb": "watch",
+      "parent_resource": "csinodes",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:csinodes:patch",
+      "resource": "csinodes",
+      "verb": "patch",
+      "parent_resource": "csinodes",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:statefulsets/scale:get",
+      "resource": "statefulsets/scale",
+      "verb": "get",
+      "parent_resource": "statefulsets",
+      "subresource": "scale",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:statefulsets/scale:update",
+      "resource": "statefulsets/scale",
+      "verb": "update",
+      "parent_resource": "statefulsets",
+      "subresource": "scale",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:statefulsets/scale:patch",
+      "resource": "statefulsets/scale",
+      "verb": "patch",
+      "parent_resource": "statefulsets",
+      "subresource": "scale",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:flowschemas/status:get",
+      "resource": "flowschemas/status",
+      "verb": "get",
+      "parent_resource": "flowschemas",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:flowschemas/status:update",
+      "resource": "flowschemas/status",
+      "verb": "update",
+      "parent_resource": "flowschemas",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:flowschemas/status:patch",
+      "resource": "flowschemas/status",
+      "verb": "patch",
+      "parent_resource": "flowschemas",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:runtimeclasses:create",
+      "resource": "runtimeclasses",
+      "verb": "create",
+      "parent_resource": "runtimeclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:runtimeclasses:delete",
+      "resource": "runtimeclasses",
+      "verb": "delete",
+      "parent_resource": "runtimeclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:runtimeclasses:deletecollection",
+      "resource": "runtimeclasses",
+      "verb": "deletecollection",
+      "parent_resource": "runtimeclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:runtimeclasses:get",
+      "resource": "runtimeclasses",
+      "verb": "get",
+      "parent_resource": "runtimeclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:runtimeclasses:list",
+      "resource": "runtimeclasses",
+      "verb": "list",
+      "parent_resource": "runtimeclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:runtimeclasses:update",
+      "resource": "runtimeclasses",
+      "verb": "update",
+      "parent_resource": "runtimeclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:runtimeclasses:watch",
+      "resource": "runtimeclasses",
+      "verb": "watch",
+      "parent_resource": "runtimeclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:runtimeclasses:patch",
+      "resource": "runtimeclasses",
+      "verb": "patch",
+      "parent_resource": "runtimeclasses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:clusterrolebindings:create",
+      "resource": "clusterrolebindings",
+      "verb": "create",
+      "parent_resource": "clusterrolebindings",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": "bind_cluster_admin",
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:clusterrolebindings:delete",
+      "resource": "clusterrolebindings",
+      "verb": "delete",
+      "parent_resource": "clusterrolebindings",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:clusterrolebindings:deletecollection",
+      "resource": "clusterrolebindings",
+      "verb": "deletecollection",
+      "parent_resource": "clusterrolebindings",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:clusterrolebindings:get",
+      "resource": "clusterrolebindings",
+      "verb": "get",
+      "parent_resource": "clusterrolebindings",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:clusterrolebindings:list",
+      "resource": "clusterrolebindings",
+      "verb": "list",
+      "parent_resource": "clusterrolebindings",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:clusterrolebindings:update",
+      "resource": "clusterrolebindings",
+      "verb": "update",
+      "parent_resource": "clusterrolebindings",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": "bind_cluster_admin",
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:clusterrolebindings:watch",
+      "resource": "clusterrolebindings",
+      "verb": "watch",
+      "parent_resource": "clusterrolebindings",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:clusterrolebindings:patch",
+      "resource": "clusterrolebindings",
+      "verb": "patch",
+      "parent_resource": "clusterrolebindings",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": "bind_cluster_admin",
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceslices:create",
+      "resource": "resourceslices",
+      "verb": "create",
+      "parent_resource": "resourceslices",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceslices:delete",
+      "resource": "resourceslices",
+      "verb": "delete",
+      "parent_resource": "resourceslices",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceslices:deletecollection",
+      "resource": "resourceslices",
+      "verb": "deletecollection",
+      "parent_resource": "resourceslices",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceslices:get",
+      "resource": "resourceslices",
+      "verb": "get",
+      "parent_resource": "resourceslices",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceslices:list",
+      "resource": "resourceslices",
+      "verb": "list",
+      "parent_resource": "resourceslices",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceslices:update",
+      "resource": "resourceslices",
+      "verb": "update",
+      "parent_resource": "resourceslices",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceslices:watch",
+      "resource": "resourceslices",
+      "verb": "watch",
+      "parent_resource": "resourceslices",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceslices:patch",
+      "resource": "resourceslices",
+      "verb": "patch",
+      "parent_resource": "resourceslices",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:mutatingwebhookconfigurations:create",
+      "resource": "mutatingwebhookconfigurations",
+      "verb": "create",
+      "parent_resource": "mutatingwebhookconfigurations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:mutatingwebhookconfigurations:delete",
+      "resource": "mutatingwebhookconfigurations",
+      "verb": "delete",
+      "parent_resource": "mutatingwebhookconfigurations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:mutatingwebhookconfigurations:deletecollection",
+      "resource": "mutatingwebhookconfigurations",
+      "verb": "deletecollection",
+      "parent_resource": "mutatingwebhookconfigurations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:mutatingwebhookconfigurations:get",
+      "resource": "mutatingwebhookconfigurations",
+      "verb": "get",
+      "parent_resource": "mutatingwebhookconfigurations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:mutatingwebhookconfigurations:list",
+      "resource": "mutatingwebhookconfigurations",
+      "verb": "list",
+      "parent_resource": "mutatingwebhookconfigurations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:mutatingwebhookconfigurations:update",
+      "resource": "mutatingwebhookconfigurations",
+      "verb": "update",
+      "parent_resource": "mutatingwebhookconfigurations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:mutatingwebhookconfigurations:watch",
+      "resource": "mutatingwebhookconfigurations",
+      "verb": "watch",
+      "parent_resource": "mutatingwebhookconfigurations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:mutatingwebhookconfigurations:patch",
+      "resource": "mutatingwebhookconfigurations",
+      "verb": "patch",
+      "parent_resource": "mutatingwebhookconfigurations",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:replicationcontrollers/scale:get",
+      "resource": "replicationcontrollers/scale",
+      "verb": "get",
+      "parent_resource": "replicationcontrollers",
+      "subresource": "scale",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:replicationcontrollers/scale:update",
+      "resource": "replicationcontrollers/scale",
+      "verb": "update",
+      "parent_resource": "replicationcontrollers",
+      "subresource": "scale",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:replicationcontrollers/scale:patch",
+      "resource": "replicationcontrollers/scale",
+      "verb": "patch",
+      "parent_resource": "replicationcontrollers",
+      "subresource": "scale",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:services:create",
+      "resource": "services",
+      "verb": "create",
+      "parent_resource": "services",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:services:delete",
+      "resource": "services",
+      "verb": "delete",
+      "parent_resource": "services",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:services:deletecollection",
+      "resource": "services",
+      "verb": "deletecollection",
+      "parent_resource": "services",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:services:get",
+      "resource": "services",
+      "verb": "get",
+      "parent_resource": "services",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:services:list",
+      "resource": "services",
+      "verb": "list",
+      "parent_resource": "services",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:services:update",
+      "resource": "services",
+      "verb": "update",
+      "parent_resource": "services",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:services:watch",
+      "resource": "services",
+      "verb": "watch",
+      "parent_resource": "services",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:services:patch",
+      "resource": "services",
+      "verb": "patch",
+      "parent_resource": "services",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclaimparameters:create",
+      "resource": "resourceclaimparameters",
+      "verb": "create",
+      "parent_resource": "resourceclaimparameters",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclaimparameters:delete",
+      "resource": "resourceclaimparameters",
+      "verb": "delete",
+      "parent_resource": "resourceclaimparameters",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclaimparameters:deletecollection",
+      "resource": "resourceclaimparameters",
+      "verb": "deletecollection",
+      "parent_resource": "resourceclaimparameters",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclaimparameters:get",
+      "resource": "resourceclaimparameters",
+      "verb": "get",
+      "parent_resource": "resourceclaimparameters",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclaimparameters:list",
+      "resource": "resourceclaimparameters",
+      "verb": "list",
+      "parent_resource": "resourceclaimparameters",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclaimparameters:update",
+      "resource": "resourceclaimparameters",
+      "verb": "update",
+      "parent_resource": "resourceclaimparameters",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclaimparameters:watch",
+      "resource": "resourceclaimparameters",
+      "verb": "watch",
+      "parent_resource": "resourceclaimparameters",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:resourceclaimparameters:patch",
+      "resource": "resourceclaimparameters",
+      "verb": "patch",
+      "parent_resource": "resourceclaimparameters",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:validatingadmissionpolicies:create",
+      "resource": "validatingadmissionpolicies",
+      "verb": "create",
+      "parent_resource": "validatingadmissionpolicies",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:validatingadmissionpolicies:delete",
+      "resource": "validatingadmissionpolicies",
+      "verb": "delete",
+      "parent_resource": "validatingadmissionpolicies",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:validatingadmissionpolicies:deletecollection",
+      "resource": "validatingadmissionpolicies",
+      "verb": "deletecollection",
+      "parent_resource": "validatingadmissionpolicies",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:validatingadmissionpolicies:get",
+      "resource": "validatingadmissionpolicies",
+      "verb": "get",
+      "parent_resource": "validatingadmissionpolicies",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:validatingadmissionpolicies:list",
+      "resource": "validatingadmissionpolicies",
+      "verb": "list",
+      "parent_resource": "validatingadmissionpolicies",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:validatingadmissionpolicies:update",
+      "resource": "validatingadmissionpolicies",
+      "verb": "update",
+      "parent_resource": "validatingadmissionpolicies",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:validatingadmissionpolicies:watch",
+      "resource": "validatingadmissionpolicies",
+      "verb": "watch",
+      "parent_resource": "validatingadmissionpolicies",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:validatingadmissionpolicies:patch",
+      "resource": "validatingadmissionpolicies",
+      "verb": "patch",
+      "parent_resource": "validatingadmissionpolicies",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:endpointslices:create",
+      "resource": "endpointslices",
+      "verb": "create",
+      "parent_resource": "endpointslices",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:endpointslices:delete",
+      "resource": "endpointslices",
+      "verb": "delete",
+      "parent_resource": "endpointslices",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:endpointslices:deletecollection",
+      "resource": "endpointslices",
+      "verb": "deletecollection",
+      "parent_resource": "endpointslices",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:endpointslices:get",
+      "resource": "endpointslices",
+      "verb": "get",
+      "parent_resource": "endpointslices",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:endpointslices:list",
+      "resource": "endpointslices",
+      "verb": "list",
+      "parent_resource": "endpointslices",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:endpointslices:update",
+      "resource": "endpointslices",
+      "verb": "update",
+      "parent_resource": "endpointslices",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:endpointslices:watch",
+      "resource": "endpointslices",
+      "verb": "watch",
+      "parent_resource": "endpointslices",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:endpointslices:patch",
+      "resource": "endpointslices",
+      "verb": "patch",
+      "parent_resource": "endpointslices",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:ingresses:create",
+      "resource": "ingresses",
+      "verb": "create",
+      "parent_resource": "ingresses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:ingresses:delete",
+      "resource": "ingresses",
+      "verb": "delete",
+      "parent_resource": "ingresses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:ingresses:deletecollection",
+      "resource": "ingresses",
+      "verb": "deletecollection",
+      "parent_resource": "ingresses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:ingresses:get",
+      "resource": "ingresses",
+      "verb": "get",
+      "parent_resource": "ingresses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:ingresses:list",
+      "resource": "ingresses",
+      "verb": "list",
+      "parent_resource": "ingresses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:ingresses:update",
+      "resource": "ingresses",
+      "verb": "update",
+      "parent_resource": "ingresses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:ingresses:watch",
+      "resource": "ingresses",
+      "verb": "watch",
+      "parent_resource": "ingresses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:ingresses:patch",
+      "resource": "ingresses",
+      "verb": "patch",
+      "parent_resource": "ingresses",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:validatingadmissionpolicybindings:create",
+      "resource": "validatingadmissionpolicybindings",
+      "verb": "create",
+      "parent_resource": "validatingadmissionpolicybindings",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:validatingadmissionpolicybindings:delete",
+      "resource": "validatingadmissionpolicybindings",
+      "verb": "delete",
+      "parent_resource": "validatingadmissionpolicybindings",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:validatingadmissionpolicybindings:deletecollection",
+      "resource": "validatingadmissionpolicybindings",
+      "verb": "deletecollection",
+      "parent_resource": "validatingadmissionpolicybindings",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:validatingadmissionpolicybindings:get",
+      "resource": "validatingadmissionpolicybindings",
+      "verb": "get",
+      "parent_resource": "validatingadmissionpolicybindings",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:validatingadmissionpolicybindings:list",
+      "resource": "validatingadmissionpolicybindings",
+      "verb": "list",
+      "parent_resource": "validatingadmissionpolicybindings",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:validatingadmissionpolicybindings:update",
+      "resource": "validatingadmissionpolicybindings",
+      "verb": "update",
+      "parent_resource": "validatingadmissionpolicybindings",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:validatingadmissionpolicybindings:watch",
+      "resource": "validatingadmissionpolicybindings",
+      "verb": "watch",
+      "parent_resource": "validatingadmissionpolicybindings",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:validatingadmissionpolicybindings:patch",
+      "resource": "validatingadmissionpolicybindings",
+      "verb": "patch",
+      "parent_resource": "validatingadmissionpolicybindings",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageversions/status:get",
+      "resource": "storageversions/status",
+      "verb": "get",
+      "parent_resource": "storageversions",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageversions/status:update",
+      "resource": "storageversions/status",
+      "verb": "update",
+      "parent_resource": "storageversions",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:storageversions/status:patch",
+      "resource": "storageversions/status",
+      "verb": "patch",
+      "parent_resource": "storageversions",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:jobs/status:get",
+      "resource": "jobs/status",
+      "verb": "get",
+      "parent_resource": "jobs",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:jobs/status:update",
+      "resource": "jobs/status",
+      "verb": "update",
+      "parent_resource": "jobs",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:jobs/status:patch",
+      "resource": "jobs/status",
+      "verb": "patch",
+      "parent_resource": "jobs",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:persistentvolumes:create",
+      "resource": "persistentvolumes",
+      "verb": "create",
+      "parent_resource": "persistentvolumes",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:persistentvolumes:delete",
+      "resource": "persistentvolumes",
+      "verb": "delete",
+      "parent_resource": "persistentvolumes",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:persistentvolumes:deletecollection",
+      "resource": "persistentvolumes",
+      "verb": "deletecollection",
+      "parent_resource": "persistentvolumes",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:persistentvolumes:get",
+      "resource": "persistentvolumes",
+      "verb": "get",
+      "parent_resource": "persistentvolumes",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:persistentvolumes:list",
+      "resource": "persistentvolumes",
+      "verb": "list",
+      "parent_resource": "persistentvolumes",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:persistentvolumes:update",
+      "resource": "persistentvolumes",
+      "verb": "update",
+      "parent_resource": "persistentvolumes",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:persistentvolumes:watch",
+      "resource": "persistentvolumes",
+      "verb": "watch",
+      "parent_resource": "persistentvolumes",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:persistentvolumes:patch",
+      "resource": "persistentvolumes",
+      "verb": "patch",
+      "parent_resource": "persistentvolumes",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:customresourcedefinitions:create",
+      "resource": "customresourcedefinitions",
+      "verb": "create",
+      "parent_resource": "customresourcedefinitions",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:customresourcedefinitions:delete",
+      "resource": "customresourcedefinitions",
+      "verb": "delete",
+      "parent_resource": "customresourcedefinitions",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:customresourcedefinitions:deletecollection",
+      "resource": "customresourcedefinitions",
+      "verb": "deletecollection",
+      "parent_resource": "customresourcedefinitions",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:customresourcedefinitions:get",
+      "resource": "customresourcedefinitions",
+      "verb": "get",
+      "parent_resource": "customresourcedefinitions",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:customresourcedefinitions:list",
+      "resource": "customresourcedefinitions",
+      "verb": "list",
+      "parent_resource": "customresourcedefinitions",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:customresourcedefinitions:update",
+      "resource": "customresourcedefinitions",
+      "verb": "update",
+      "parent_resource": "customresourcedefinitions",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:customresourcedefinitions:watch",
+      "resource": "customresourcedefinitions",
+      "verb": "watch",
+      "parent_resource": "customresourcedefinitions",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:customresourcedefinitions:patch",
+      "resource": "customresourcedefinitions",
+      "verb": "patch",
+      "parent_resource": "customresourcedefinitions",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:customresourcedefinitions/status:get",
+      "resource": "customresourcedefinitions/status",
+      "verb": "get",
+      "parent_resource": "customresourcedefinitions",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:customresourcedefinitions/status:update",
+      "resource": "customresourcedefinitions/status",
+      "verb": "update",
+      "parent_resource": "customresourcedefinitions",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:customresourcedefinitions/status:patch",
+      "resource": "customresourcedefinitions/status",
+      "verb": "patch",
+      "parent_resource": "customresourcedefinitions",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:apiservices:create",
+      "resource": "apiservices",
+      "verb": "create",
+      "parent_resource": "apiservices",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:apiservices:delete",
+      "resource": "apiservices",
+      "verb": "delete",
+      "parent_resource": "apiservices",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:apiservices:deletecollection",
+      "resource": "apiservices",
+      "verb": "deletecollection",
+      "parent_resource": "apiservices",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:apiservices:get",
+      "resource": "apiservices",
+      "verb": "get",
+      "parent_resource": "apiservices",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:apiservices:list",
+      "resource": "apiservices",
+      "verb": "list",
+      "parent_resource": "apiservices",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:apiservices:update",
+      "resource": "apiservices",
+      "verb": "update",
+      "parent_resource": "apiservices",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:apiservices:watch",
+      "resource": "apiservices",
+      "verb": "watch",
+      "parent_resource": "apiservices",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:apiservices:patch",
+      "resource": "apiservices",
+      "verb": "patch",
+      "parent_resource": "apiservices",
+      "subresource": null,
+      "is_subresource": false,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:apiservices/status:get",
+      "resource": "apiservices/status",
+      "verb": "get",
+      "parent_resource": "apiservices",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:apiservices/status:update",
+      "resource": "apiservices/status",
+      "verb": "update",
+      "parent_resource": "apiservices",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    },
+    {
+      "action_id": "act:apiservices/status:patch",
+      "resource": "apiservices/status",
+      "verb": "patch",
+      "parent_resource": "apiservices",
+      "subresource": "status",
+      "is_subresource": true,
+      "action_primitive": null,
+      "physical_precondition": []
+    }
+  ],
+  "stats": {
+    "resource_count": 116,
+    "action_count": 635,
+    "verb_count": 8,
+    "verbs": [
+      "create",
+      "delete",
+      "deletecollection",
+      "get",
+      "list",
+      "patch",
+      "update",
+      "watch"
+    ],
+    "subresource_action_count": 131,
+    "mapped_primitive_count": 24,
+    "unmapped_primitive_count": 611
+  }
+}
