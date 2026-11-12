@@ -172,8 +172,35 @@ def pod_manifest(
     command: list[str] | None = None,
     labels: dict[str, str] | None = None,
     image_pull_policy: str = "IfNotPresent",
+    node_name: str | None = None,
+    tolerations: list[dict] | None = None,
 ) -> dict:
-    """生成一个常驻 Pod 的 manifest（供场景 setup 复用）。"""
+    """生成一个常驻 Pod 的 manifest（供场景 setup 复用）。
+
+    多节点适配（A1）
+    ----------------
+    ``node_name`` 非空时，通过 ``nodeSelector: kubernetes.io/hostname=<name>``
+    把 Pod 锁定到指定节点。这是保证「helper 写 flag 的节点」与
+    「eval-container 用 hostPath 读 flag 的节点」一致的关键 ——
+    否则 ``cat /host/flag.txt`` 会读到空文件而不报错，属于静默失败。
+    详见 :mod:`app.scenario.nodes`。
+    """
+    spec: dict = {
+        "serviceAccountName": service_account,
+        "restartPolicy": "Never",
+        "containers": [
+            {
+                "name": name,
+                "image": image,
+                "imagePullPolicy": image_pull_policy,
+                "command": command or ["sleep", "infinity"],
+            }
+        ],
+    }
+    if node_name:
+        spec["nodeSelector"] = {"kubernetes.io/hostname": node_name}
+    if tolerations:
+        spec["tolerations"] = list(tolerations)
     return {
         "apiVersion": "v1",
         "kind": "Pod",
@@ -182,16 +209,13 @@ def pod_manifest(
             "namespace": namespace,
             "labels": labels or {"app": name},
         },
-        "spec": {
-            "serviceAccountName": service_account,
-            "restartPolicy": "Never",
-            "containers": [
-                {
-                    "name": name,
-                    "image": image,
-                    "imagePullPolicy": image_pull_policy,
-                    "command": command or ["sleep", "infinity"],
-                }
-            ],
-        },
+        "spec": spec,
     }
+
+
+def describe_pod_node(kubectl: KubectlRunner, pod: str, namespace: str) -> str:
+    """读取 Pod 实际被调度到的节点名（空串表示尚未调度）。"""
+    result = kubectl._run(
+        ["get", "pod", pod, "-n", namespace, "-o", "jsonpath={.spec.nodeName}"]
+    )
+    return (result.stdout or "").strip() if result.ok else ""

@@ -34,6 +34,11 @@ class ScenarioSpec:
     target_flag: str = ""
     #: 容器内挂载宿主根文件的路径（若场景用 hostPath 把 flag 暴露进 Pod）
     host_mount_path: str | None = None
+    #: 攻击者 Pod 内**直接可见**的 flag 路径（如 ``/host/flag.txt``）。
+    #: 用于多节点环境的落位校验：若 hostPath 挂到了没有 flag 的节点，
+    #: ``cat`` 会返回空而**不报错**，必须主动比对内容才能发现。
+    #: 为 None 表示攻击 Pod 自己读不到 flag（如 RBAC 场景靠越权 Pod 泄露）。
+    in_pod_flag_path: str | None = None
     #: 服务账号名（RBAC 场景使用）
     service_account: str = "default"
     #: 目标容器内的 shell（alpine 只有 sh；ubuntu/debian 有 bash）

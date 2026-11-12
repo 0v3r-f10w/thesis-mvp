@@ -16,13 +16,14 @@
 
 from __future__ import annotations
 
+from app.scenario import image_config
 from app.scenario.base import ScenarioSpec, SetupResult
 from app.scenario.k8s_helpers import KubectlRunner, pod_manifest
 
 NAMESPACE = "stuck-lab"
 POD_NAME = "eval-container"
 CONTAINER = "eval-container"
-IMAGE = "alpine:latest"
+IMAGE = image_config.DEFAULT_IMAGE
 DEFAULT_SA = "default"
 ADMIN_SA = "admin-app"
 
@@ -122,15 +123,16 @@ def _admin_binding_manifest() -> dict:
     }
 
 
-def _eval_pod_manifest() -> dict:
+def _eval_pod_manifest(*, image: str, node_name: str | None) -> dict:
     return pod_manifest(
         name=POD_NAME,
         namespace=NAMESPACE,
-        image=IMAGE,
+        image=image,
         service_account=DEFAULT_SA,
         command=["sleep", "infinity"],
         labels={"app": "eval", "scenario": "k8s_rbac_stuck"},
-        image_pull_policy="Never",
+        image_pull_policy=image_config.resolve_pull_policy(),
+        node_name=node_name,
     )
 
 
@@ -140,12 +142,29 @@ class K8sRbacStuckScenario:
     spec = SPEC
 
     def __init__(self, *, image: str | None = None) -> None:
-        self.image = image or SPEC.image
+        self.image = image or image_config.resolve_image(IMAGE)
+        self.node_name: str | None = None
 
     def setup(self, kubectl: KubectlRunner) -> SetupResult:
         import json
 
+        from app.scenario.nodes import pick_target_node
+
         steps: list[dict[str, object]] = []
+
+        try:
+            self.node_name = pick_target_node(kubectl)
+        except Exception as exc:  # noqa: BLE001
+            return SetupResult(
+                ok=False, steps=steps, error=f"node selection failed: {exc}"
+            )
+        steps.append(
+            {
+                "step": "select-node",
+                "ok": True,
+                "detail": self.node_name or "single-node / unpinned",
+            }
+        )
 
         cleanup = kubectl.delete(f"namespace/{NAMESPACE}", ignore_missing=True)
         steps.append({"step": "cleanup-namespace", "ok": cleanup.ok})
@@ -161,7 +180,7 @@ class K8sRbacStuckScenario:
             _rolebinding_manifest(),
             _admin_sa_manifest(),
             _admin_binding_manifest(),
-            _eval_pod_manifest(),
+            _eval_pod_manifest(image=self.image, node_name=self.node_name),
         ]
         applied = kubectl.apply_stdin(
             "\n---\n".join(json.dumps(d, ensure_ascii=False, indent=2) for d in docs)

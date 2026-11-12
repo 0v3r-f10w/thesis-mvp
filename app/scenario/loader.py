@@ -19,6 +19,7 @@ from typing import Protocol
 
 from app.scenario import (
     hostpath_escape,
+    k8s_multihop_chain,
     k8s_rbac_permissions,
     k8s_rbac_stuck,
     privileged_escape,
@@ -71,6 +72,12 @@ _REGISTRY: dict[str, ScenarioEntry] = {
         factory=k8s_rbac_stuck.K8sRbacStuckScenario,
         needs_host_prepare=False,
     ),
+    # 三跳隐式权限链：检验图谱引导价值
+    k8s_multihop_chain.SPEC.name: ScenarioEntry(
+        name=k8s_multihop_chain.SPEC.name,
+        factory=k8s_multihop_chain.K8sMultihopChainScenario,
+        needs_host_prepare=True,
+    ),
 }
 
 
@@ -79,7 +86,31 @@ _HELPER_NS = "default"
 _HELPER_POD = "dsh-host-prepare"
 
 
-def _helper_manifest() -> dict:
+def _helper_manifest(
+    *, image: str | None = None, node_name: str | None = None
+) -> dict:
+    """生成落盘 flag 的特权 helper Pod。
+
+    Args:
+        image: helper 使用的镜像（需在目标节点上已存在）。
+        node_name: 锁定到的节点；与攻击 Pod 保持一致是关键（A1）。
+    """
+    spec: dict = {
+        "restartPolicy": "Never",
+        "containers": [
+            {
+                "name": "prepare",
+                "image": image or privileged_escape.IMAGE,
+                "imagePullPolicy": "Never",
+                "command": ["sleep", "600"],
+                "securityContext": {"privileged": True},
+                "volumeMounts": [{"name": "host-root", "mountPath": "/host"}],
+            }
+        ],
+        "volumes": [{"name": "host-root", "hostPath": {"path": "/"}}],
+    }
+    if node_name:
+        spec["nodeSelector"] = {"kubernetes.io/hostname": node_name}
     return {
         "apiVersion": "v1",
         "kind": "Pod",
@@ -88,20 +119,7 @@ def _helper_manifest() -> dict:
             "namespace": _HELPER_NS,
             "labels": {"app": "dsh-host-prepare"},
         },
-        "spec": {
-            "restartPolicy": "Never",
-            "containers": [
-                {
-                    "name": "prepare",
-                    "image": privileged_escape.IMAGE,
-                    "imagePullPolicy": "Never",
-                    "command": ["sleep", "600"],
-                    "securityContext": {"privileged": True},
-                    "volumeMounts": [{"name": "host-root", "mountPath": "/host"}],
-                }
-            ],
-            "volumes": [{"name": "host-root", "hostPath": {"path": "/"}}],
-        },
+        "spec": spec,
     }
 
 
@@ -132,6 +150,9 @@ def needs_host_prepare(name: str) -> bool:
 def prepare_host(
     kubectl: KubectlRunner,
     scenario_name: str,
+    *,
+    image: str | None = None,
+    node_name: str | None = None,
 ) -> SetupResult:
     """用临时特权 helper Pod 在 kind 节点上做准备工作。
 
@@ -139,9 +160,26 @@ def prepare_host(
     - ``privileged_escape``：把 flag 写到节点 ``/flag-privileged.txt``
     - ``hostpath_escape`` ：把 flag 写到 ``/etc/kubernetes/pki/etcd/flag.txt``
       并在 ``admin.conf`` 末尾植入线索
+    - ``k8s_multihop_chain``：把 flag 写到节点 ``/flag.txt``
+
+    ★ 多节点双保险（A1）★
+    ---------------------
+    本函数会**遍历所有节点**各起一次 helper，把 flag 写到每个节点上。
+    理由：``hostPath`` 跟随 Pod 被调度到的节点，一旦「写 flag 的节点」
+    与「读 flag 的节点」不一致，``cat`` 返回空而**不报错**，
+    属于最难排查的静默失败。锁定节点是为了可复现，
+    双节点落位是为了即使锁定失效也不会静默出错。
 
     完成后立即删除 helper Pod，不给 agent 留任何特权入口。
+
+    Args:
+        kubectl: kubectl 封装。
+        scenario_name: 场景名。
+        image: helper 用的镜像（需已在节点上，故固定 alpine）。
+        node_name: 目标节点（锁定用）。``None`` 时遍历全部节点。
     """
+    from app.scenario.nodes import all_node_names, pick_target_node
+
     steps: list[dict[str, object]] = []
 
     if scenario_name == privileged_escape.SPEC.name:
@@ -153,67 +191,106 @@ def prepare_host(
         )
     elif scenario_name == hostpath_escape.SPEC.name:
         script = hostpath_escape.host_prepare_script()
+    elif scenario_name == k8s_multihop_chain.SPEC.name:
+        # 三跳场景最终也是读节点上的 flag（由挂 admin-app + hostPath 的 Pod 读取）
+        script = (
+            f"set -e; echo '{k8s_multihop_chain.FLAG_VALUE}' "
+            f"> /host{k8s_multihop_chain.FLAG_HOST_PATH}; "
+            f"chmod 644 /host{k8s_multihop_chain.FLAG_HOST_PATH}; "
+            f"echo prepared: $(cat /host{k8s_multihop_chain.FLAG_HOST_PATH})"
+        )
     else:
         return SetupResult(ok=True, steps=[], error=None)
 
-    # 1) 起 helper
-    kubectl.delete(f"pod/{_HELPER_POD}", _HELPER_NS, ignore_missing=True)
-    applied = kubectl.apply_stdin(
-        json.dumps(_helper_manifest(), ensure_ascii=False, indent=2)
-    )
-    steps.append(
-        {
-            "step": "create-helper-pod",
-            "ok": applied.ok,
-            "detail": (applied.stdout or applied.stderr).strip()[:300],
-        }
-    )
-    if not applied.ok:
-        return SetupResult(
-            ok=False, steps=steps,
-            error=f"helper pod apply failed: {applied.stderr.strip()}",
-        )
+    # 决定要写到哪些节点
+    try:
+        if node_name is not None:
+            targets = [node_name]
+        else:
+            try:
+                targets = all_node_names(kubectl)
+            except Exception:  # noqa: BLE001 - 取不到节点列表时退化为单次
+                targets = [None]  # type: ignore[list-item]
+    except Exception as exc:  # noqa: BLE001
+        return SetupResult(ok=False, steps=steps,
+                           error=f"cannot enumerate nodes: {exc}")
 
-    waited = kubectl.wait_pod_ready(_HELPER_POD, _HELPER_NS, timeout=120)
-    steps.append(
-        {
-            "step": "wait-helper-ready",
-            "ok": waited.ok,
-            "detail": (waited.stdout or waited.stderr).strip()[:300],
-        }
-    )
-    if not waited.ok:
-        return SetupResult(
-            ok=False, steps=steps,
-            error=f"helper pod not Ready: {waited.stderr.strip()}",
-        )
+    if not targets:
+        targets = [None]  # type: ignore[list-item]
 
-    # 2) 在 helper 里执行宿主机准备脚本
     from app.exec.executor import Executor, KubectlTransport
 
-    result = Executor(default_timeout=120).execute(
-        KubectlTransport(
-            pod=_HELPER_POD,
-            namespace=_HELPER_NS,
-            container="prepare",
-            shell="sh",
-            shell_flags=(),
-        ),
-        script,
-    )
-    steps.append(
-        {
-            "step": "prepare-host",
-            "ok": result.ok,
-            "detail": (result.output or "").strip()[:400],
-        }
-    )
+    for target in targets:
+        tag = target or "<unpinned>"
 
-    # 3) 无论成败都删掉 helper（不留特权后门）
-    removed = kubectl.delete(
-        f"pod/{_HELPER_POD}", _HELPER_NS, ignore_missing=True
-    )
-    steps.append({"step": "delete-helper-pod", "ok": removed.ok})
+        # 1) 起 helper
+        kubectl.delete(f"pod/{_HELPER_POD}", _HELPER_NS, ignore_missing=True)
+        applied = kubectl.apply_stdin(
+            json.dumps(
+                _helper_manifest(image=image, node_name=target),
+                ensure_ascii=False,
+                indent=2,
+            )
+        )
+        steps.append(
+            {
+                "step": f"create-helper-pod[{tag}]",
+                "ok": applied.ok,
+                "detail": (applied.stdout or applied.stderr).strip()[:300],
+            }
+        )
+        if not applied.ok:
+            return SetupResult(
+                ok=False,
+                steps=steps,
+                error=f"helper pod apply failed on {tag}: {applied.stderr.strip()}",
+            )
 
-    return SetupResult(ok=result.ok, steps=steps, error=None if result.ok else
-                       f"host prepare failed: {result.stderr.strip()}")
+        waited = kubectl.wait_pod_ready(_HELPER_POD, _HELPER_NS, timeout=120)
+        steps.append(
+            {
+                "step": f"wait-helper-ready[{tag}]",
+                "ok": waited.ok,
+                "detail": (waited.stdout or waited.stderr).strip()[:300],
+            }
+        )
+        if not waited.ok:
+            return SetupResult(
+                ok=False,
+                steps=steps,
+                error=f"helper pod not Ready on {tag}: {waited.stderr.strip()}",
+            )
+
+        # 2) 在 helper 里执行宿主机准备脚本
+        result = Executor(default_timeout=120).execute(
+            KubectlTransport(
+                pod=_HELPER_POD,
+                namespace=_HELPER_NS,
+                container="prepare",
+                shell="sh",
+                shell_flags=(),
+            ),
+            script,
+        )
+        steps.append(
+            {
+                "step": f"prepare-host[{tag}]",
+                "ok": result.ok,
+                "detail": (result.output or "").strip()[:400],
+            }
+        )
+
+        # 3) 每轮都删掉 helper（不留特权后门）
+        removed = kubectl.delete(
+            f"pod/{_HELPER_POD}", _HELPER_NS, ignore_missing=True
+        )
+        steps.append({"step": f"delete-helper-pod[{tag}]", "ok": removed.ok})
+
+        if not result.ok:
+            return SetupResult(
+                ok=False,
+                steps=steps,
+                error=f"host prepare failed on {tag}: {result.stderr.strip()}",
+            )
+
+    return SetupResult(ok=True, steps=steps)

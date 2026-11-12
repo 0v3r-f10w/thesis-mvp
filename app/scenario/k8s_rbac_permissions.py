@@ -30,6 +30,7 @@ from __future__ import annotations
 
 import json
 
+from app.scenario import image_config
 from app.scenario.base import ScenarioSpec, SetupResult
 from app.scenario.k8s_helpers import KubectlRunner, pod_manifest
 
@@ -38,7 +39,9 @@ POD_NAME = "eval-container"
 CONTAINER = "eval-container"
 DEFAULT_SA = "default"
 ADMIN_SA = "admin-app"
-IMAGE = "alpine:latest"
+#: 基线镜像（busybox）。实际使用值由 image_config.resolve_image 决定，
+#: 可通过 --image / DSH_IMAGE 覆盖（工具升级对比实验用）。
+IMAGE = image_config.DEFAULT_IMAGE
 
 SPEC = ScenarioSpec(
     name="k8s_rbac_permissions",
@@ -58,6 +61,10 @@ SPEC = ScenarioSpec(
     service_account=DEFAULT_SA,
     shell="sh",
     shell_flags=(),
+    #: 攻击 Pod 内能看到宿主 flag 的路径（多节点落位校验用）。
+    #: 注意：本场景攻击 Pod 本身**不挂** hostPath —— flag 是靠越权创建的
+    #: ``pwned`` Pod 读出来的。因此这里留 None，校验改由 pwned 完成。
+    in_pod_flag_path=None,
     exposures=[
         "default ServiceAccount can create pods in escape-lab",
         "admin-app ServiceAccount is bound to cluster-admin",
@@ -172,27 +179,32 @@ def _admin_binding_manifest() -> dict:
     }
 
 
-def _eval_pod_manifest() -> dict:
-    """攻击者 Pod：挂 default SA（低权限），Pod 内只有 wget。"""
+def _eval_pod_manifest(*, image: str, node_name: str | None) -> dict:
+    """攻击者 Pod：挂 default SA（低权限），Pod 内只有 wget（基线镜像）。"""
     return pod_manifest(
         name=POD_NAME,
         namespace=NAMESPACE,
-        image=IMAGE,
+        image=image,
         service_account=DEFAULT_SA,
         command=["sleep", "infinity"],
         labels={"app": "eval", "scenario": "k8s_rbac_permissions"},
+        image_pull_policy=image_config.resolve_pull_policy(),
+        node_name=node_name,
     )
 
 
-def all_manifests() -> str:
+def all_manifests(
+    *, image: str | None = None, node_name: str | None = None
+) -> str:
     """拼接成一份多文档 YAML。"""
+    use_image = image or image_config.resolve_image(IMAGE)
     docs = [
         _namespace_manifest(),
         _role_manifest(),
         _rolebinding_manifest(),
         _admin_sa_manifest(),
         _admin_binding_manifest(),
-        _eval_pod_manifest(),
+        _eval_pod_manifest(image=use_image, node_name=node_name),
     ]
     return "\n---\n".join(json.dumps(d, ensure_ascii=False, indent=2) for d in docs)
 
@@ -208,7 +220,9 @@ class K8sRbacPermissionsScenario:
     spec = SPEC
 
     def __init__(self, *, image: str | None = None) -> None:
-        self.image = image or SPEC.image
+        # 镜像优先级：显式参数 > 环境变量 > 场景默认值
+        self.image = image or image_config.resolve_image(IMAGE)
+        self.node_name: str | None = None
 
     # -- setup --------------------------------------------------------------
 
@@ -217,7 +231,24 @@ class K8sRbacPermissionsScenario:
 
     def setup(self, kubectl: KubectlRunner) -> SetupResult:
         """创建场景。幂等：先清理再建。"""
+        from app.scenario.nodes import pick_target_node
+
         steps: list[dict[str, object]] = []
+
+        # 0) 确定目标节点（多节点下防止 hostPath 静默错位）
+        try:
+            self.node_name = pick_target_node(kubectl)
+        except Exception as exc:  # noqa: BLE001 - 节点选择失败必须终止
+            return SetupResult(
+                ok=False, steps=steps, error=f"node selection failed: {exc}"
+            )
+        steps.append(
+            {
+                "step": "select-node",
+                "ok": True,
+                "detail": self.node_name or "single-node / unpinned",
+            }
+        )
 
         # 1) 清理旧资源
         cleanup = kubectl.delete(f"namespace/{NAMESPACE}", ignore_missing=True)
@@ -241,7 +272,9 @@ class K8sRbacPermissionsScenario:
         )
 
         # 2) apply 全部 manifest
-        applied = kubectl.apply_stdin(all_manifests())
+        applied = kubectl.apply_stdin(
+            all_manifests(image=self.image, node_name=self.node_name)
+        )
         steps.append(
             {
                 "step": "apply-manifests",

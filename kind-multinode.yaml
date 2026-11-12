@@ -1,0 +1,10 @@
+# NOTE: file name says "multinode" but the running cluster is named `kind-desktop`
+# (see `kubectl config current-context`). Cluster name is intentionally kept as
+# `desktop` and was NOT renamed, to avoid rebuilding the cluster and losing the
+# images imported via `kind load` / `ctr import`.
+# Node names in this cluster: desktop-control-plane, desktop-worker.
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+- role: worker

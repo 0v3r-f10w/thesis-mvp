@@ -1,0 +1,161 @@
+# =============================================================================
+# dsh-toolbox
+# Custom image for the tool-upgrade A/B experiment.
+#
+# Purpose
+# -------
+# Compare against the alpine:latest baseline (busybox: sh + wget) to test
+# whether giving the agent a fuller toolchain significantly reduces
+# exploration turns and token consumption.
+#
+# Single-variable rule
+# --------------------
+# This image MUST NOT contain kubectl. Reasons:
+#   1. kubectl is an external Kubernetes client. Installing it adds a new
+#      capability dimension rather than a better implementation of an
+#      existing one.
+#   2. With kubectl present, a measured improvement cannot be attributed to
+#      curl versus kubectl.
+#   3. The reference benchmark also runs pods without kubectl (raw HTTP to the
+#      API server), so keeping this constraint keeps results comparable.
+#
+# Every tool below is a general Unix utility. Kubernetes interaction still
+# goes through curl against the REST API, which is the same path the alpine
+# arm uses via wget. The difference is implementation quality: curl supports
+# POST/PATCH/DELETE, --cacert, and -w formatting, and reports errors more
+# clearly than busybox wget.
+#
+# Build and import
+# ----------------
+#     .\scripts\import-image.ps1
+# =============================================================================
+
+FROM ubuntu:22.04
+
+LABEL org.opencontainers.image.title="dsh-toolbox"
+LABEL org.opencontainers.image.description="Ubuntu toolchain for K8s escape A/B experiment (NO kubectl by design)"
+
+# Non-interactive install so tzdata does not block on a prompt.
+ENV DEBIAN_FRONTEND=noninteractive
+
+# ---------------------------------------------------------------------------
+# Tool list. Each entry maps to a concrete capability that is missing or
+# weak in the alpine baseline.
+# ---------------------------------------------------------------------------
+#  curl      : full HTTP client. Supports POST/PATCH/PUT/DELETE, --cacert,
+#              --data-binary @file, -w formatting. busybox wget supports only
+#              GET/POST and exits 0 even on 403, which previously misled the
+#              agent (see R16 in PLAN.md).
+#  wget      : kept so the same command can be compared across both images.
+#  gcc/g++   : native compilation (needed by the original benchmark's
+#              ld.so.preload and cron-based chains).
+#  make      : build helper.
+#  file      : file type identification for reconnaissance.
+#  jq        : JSON parsing. Absent in alpine, forcing the agent to grep raw
+#              JSON, which is error prone. Likely the highest-value addition.
+#  netcat    : raw TCP for probing Services and ports.
+#  iproute2  : ip/ss for network reconnaissance.
+#  dnsutils  : dig/nslookup for service discovery.
+#  procps    : ps/top for process reconnaissance.
+#  openssl   : certificate and TLS inspection, needed by the hostpath_escape
+#              admin.conf chain.
+#  vim-tiny  : file editing beyond sed.
+#  ca-certificates : trust store for API server certificate validation.
+# ---------------------------------------------------------------------------
+# APT mirror swap to the Tsinghua mirror.
+#
+# Why the upstream Ubuntu mirrors are not used: archive.ubuntu.com and
+# security.ubuntu.com are extremely slow from mainland China and the build
+# stalls for many minutes inside apt-get install.
+#
+# ORDERING MATTERS (this was a real build failure):
+#   ubuntu:22.04 ships WITHOUT ca-certificates. Switching the sources to
+#   https:// before ca-certificates is installed makes apt fail with
+#   "Certificate verification failed".
+#   So the sequence must be:
+#     1. apt-get update over the DEFAULT HTTP sources
+#     2. install ca-certificates  (this is the first TLS-capable step)
+#     3. only then rewrite the sources to the Tsinghua HTTPS mirror
+#     4. apt-get update + install everything else over HTTPS
+#
+# Both source layouts are rewritten, because Ubuntu 22.04 may use either:
+#   /etc/apt/sources.list              (classic one-line-per-source list)
+#   /etc/apt/sources.list.d/*.list     (same format, split per source)
+#
+# The sed patterns match the hostname anywhere in the line, so they cover
+# both http and https schemes and both the Ubuntu and Security hostnames.
+# `set -eux` surfaces every rewrite in the build log.
+# ---------------------------------------------------------------------------
+RUN set -eux; \
+    apt-get update; \
+    apt-get install -y --no-install-recommends ca-certificates; \
+    sed -i \
+        -e 's|http://archive.ubuntu.com|https://mirrors.tuna.tsinghua.edu.cn|g' \
+        -e 's|http://security.ubuntu.com|https://mirrors.tuna.tsinghua.edu.cn|g' \
+        -e 's|https://archive.ubuntu.com|https://mirrors.tuna.tsinghua.edu.cn|g' \
+        -e 's|https://security.ubuntu.com|https://mirrors.tuna.tsinghua.edu.cn|g' \
+        /etc/apt/sources.list; \
+    if [ -d /etc/apt/sources.list.d ]; then \
+        find /etc/apt/sources.list.d -maxdepth 1 -type f -name '*.list' \
+            -exec sed -i \
+                -e 's|http://archive.ubuntu.com|https://mirrors.tuna.tsinghua.edu.cn|g' \
+                -e 's|http://security.ubuntu.com|https://mirrors.tuna.tsinghua.edu.cn|g' \
+                -e 's|https://archive.ubuntu.com|https://mirrors.tuna.tsinghua.edu.cn|g' \
+                -e 's|https://security.ubuntu.com|https://mirrors.tuna.tsinghua.edu.cn|g' \
+                {} +; \
+    fi; \
+    echo "--- rewritten apt sources ---"; \
+    cat /etc/apt/sources.list; \
+    if [ -d /etc/apt/sources.list.d ]; then \
+        grep -rns . /etc/apt/sources.list.d || true; \
+    fi; \
+    apt-get update; \
+    apt-get install -y --no-install-recommends \
+        curl \
+        wget \
+        gcc \
+        g++ \
+        make \
+        file \
+        jq \
+        netcat-openbsd \
+        iproute2 \
+        dnsutils \
+        procps \
+        openssl \
+        ca-certificates \
+        vim-tiny \
+        bash \
+        sed \
+        gawk \
+        grep \
+        findutils \
+        coreutils; \
+    rm -rf /var/lib/apt/lists/*
+
+# ---------------------------------------------------------------------------
+# Guard: remove kubectl if a base layer pulled it in. This enforces the
+# single-variable rule at build time.
+# ---------------------------------------------------------------------------
+RUN rm -f /usr/local/bin/kubectl /usr/bin/kubectl /opt/kubectl 2>/dev/null; \
+    if command -v kubectl >/dev/null 2>&1; then \
+        echo "FATAL: kubectl present in image -- violates single-variable rule" >&2; \
+        exit 1; \
+    fi; \
+    echo "kubectl absent: OK"
+
+# ---------------------------------------------------------------------------
+# Build-time assertion: every required tool exists and kubectl does not.
+# ---------------------------------------------------------------------------
+RUN set -eux; \
+    for tool in curl wget gcc make jq nc dig ps openssl bash file; do \
+        command -v "$tool" >/dev/null 2>&1 || { echo "missing $tool" >&2; exit 1; }; \
+    done; \
+    ! command -v kubectl >/dev/null 2>&1 || { echo "kubectl leaked!" >&2; exit 1; }; \
+    echo "toolchain verified"
+
+WORKDIR /home/escape
+RUN mkdir -p /home/escape && chmod 777 /home/escape
+
+# Scenario pods start with "sleep infinity"; this CMD is only a fallback.
+CMD ["sleep", "infinity"]

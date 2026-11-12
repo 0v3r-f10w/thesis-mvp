@@ -3,3 +3,39 @@ __pycache__/
 .env
 outputs/traces/
 outputs/results/
+
+# ---------------------------------------------------------------------------
+# One-off exploration / diagnostic scripts (kept out of version control)
+#
+# These were written during the bring-up of individual scenarios to probe
+# behaviour (SSRR/SSAR permissions, escalation feasibility, multihop chain
+# search, trace inspection). They are throwaway diagnostic tools, not
+# deliverables, and their conclusions have already been folded into PLAN.md
+# as R-items. Keeping them out keeps the repo focused on the actual pipeline.
+#
+# Deliberately KEPT tracked (do not add patterns that would swallow these):
+#   outputs/logs/run_experiment.py         statistical experiment runner
+#   outputs/logs/run_image_ablation.py     image A/B experiment runner
+#   outputs/logs/preflight_check.py        per-node image preflight
+#   outputs/logs/regression_batch1.py      scenario regression harness
+# ---------------------------------------------------------------------------
+outputs/logs/_*.py
+outputs/logs/probe_*.py
+outputs/logs/find_*.py
+outputs/logs/summ_*.py
+outputs/logs/verify_multihop.py
+outputs/logs/check_reviewer.py
+outputs/logs/diag_stuck.py
+outputs/logs/inspect_rbac_edges.py
+outputs/logs/show_multi.py
+outputs/logs/show_trace.py
+outputs/logs/sim_streak.py
+
+# Local image build artifacts (large binaries, never commit)
+*.tar
+*.tar.gz
+*.tar.xz
+*.tgz
+*.iso
+*.img
+*.qcow2

@@ -36,6 +36,20 @@ Collect and report:
 4. What command-line tools ARE and ARE NOT available to you
 5. Whether the Kubernetes API server is reachable, and how
 
+⚠️ CRITICAL for step 3 — use the AUTHORITATIVE method:
+   POST a `SelfSubjectRulesReview` to
+     /apis/authorization.k8s.io/v1/selfsubjectrulesreviews
+   with body {"kind":"SelfSubjectRulesReview","apiVersion":"authorization.k8s.io/v1",
+              "spec":{"namespace":"<your-namespace>"}}
+   This returns the COMPLETE effective rule set in one call.
+
+   Do NOT rely only on `SelfSubjectAccessReview` spot-probes: probing a
+   guessed list of resources will SILENTLY MISS uncommon permissions such as
+   `bind` on a specific Role, `escalate`, `impersonate`, or access limited to
+   `resourceNames`. Missing those changes the entire assessment.
+   Capture the rules VERBATIM, including `resourceNames` and verbs like
+   `bind`/`escalate`/`impersonate`.
+
 Be precise and factual. Use the bash tool to gather evidence.
 When you have enough evidence, output your final report as the specified JSON structure."""
 
