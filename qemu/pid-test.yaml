@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pid-test
+spec:
+  # shareProcessNamespace: true
+  hostPID: true          # ← 关键，不是 shareProcessNamespace
+  containers:
+  - name: pid-test
+    image: alpine:latest
+    command: ["sleep", "3600"]
+    securityContext:
+      capabilities:
+        add: ["SYS_PTRACE"]

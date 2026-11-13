@@ -37,5 +37,27 @@ outputs/logs/sim_streak.py
 *.tar.xz
 *.tgz
 *.iso
-*.img
 *.qcow2
+
+# ---------------------------------------------------------------------------
+# QEMU VM disk images
+#
+# The base cloud image and its resized copies are 2-3 GB and exceed GitHub's
+# 100 MB per-file limit. They are regenerable from the upstream cloud image.
+# ---------------------------------------------------------------------------
+*.img
+*.img.clean
+
+# Exception: the cloud-init seed image is small (~400 KB) and is a build input
+# for the VM, so it stays tracked to keep the environment reproducible.
+!qemu/seed.img
+
+# ---------------------------------------------------------------------------
+# QEMU exploit artifacts
+#
+# qemu/artifacts/shocker and qemu/artifacts/escape.ko ARE tracked on purpose:
+# they are required scenario inputs, and cap_sys_module's healthcheck verifies
+# the .ko vermagic against the running kernel.
+# The kernel module build tree is intermediate output, not a deliverable.
+# ---------------------------------------------------------------------------
+qemu/artifacts/modbuild/

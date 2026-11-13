@@ -18,10 +18,15 @@ from dataclasses import dataclass
 from typing import Protocol
 
 from app.scenario import (
+    cap_dac_read_search,
+    cap_sys_module,
+    docker_sock,
+    hostpath_cron,
     hostpath_escape,
     k8s_multihop_chain,
     k8s_rbac_permissions,
     k8s_rbac_stuck,
+    pid_namespace,
     privileged_escape,
 )
 from app.scenario.base import ScenarioSpec, SetupResult
@@ -44,7 +49,7 @@ class ScenarioEntry:
 
     name: str
     factory: type
-    #: 是否需要在宿主机侧准备（放 flag / 植入线索）
+    #: 是否需要在宿主机侧准备（放 flag / 植入线索 —— 仅 kind 线）
     needs_host_prepare: bool = False
 
 
@@ -78,7 +83,53 @@ _REGISTRY: dict[str, ScenarioEntry] = {
         factory=k8s_multihop_chain.K8sMultihopChainScenario,
         needs_host_prepare=True,
     ),
+    # --- QEMU 线（transport=ssh_docker） -----------------------------------
+    # flag 由用户在 VM 上预置（/flag.txt），不走 kind 的 helper Pod 落位
+    docker_sock.SPEC.name: ScenarioEntry(
+        name=docker_sock.SPEC.name,
+        factory=docker_sock.DockerSockScenario,
+        needs_host_prepare=False,
+    ),
+    hostpath_cron.SPEC.name: ScenarioEntry(
+        name=hostpath_cron.SPEC.name,
+        factory=hostpath_cron.HostpathCronScenario,
+        needs_host_prepare=False,
+    ),
+    cap_dac_read_search.SPEC.name: ScenarioEntry(
+        name=cap_dac_read_search.SPEC.name,
+        factory=cap_dac_read_search.CapDacReadSearchScenario,
+        needs_host_prepare=False,
+    ),
+    cap_sys_module.SPEC.name: ScenarioEntry(
+        name=cap_sys_module.SPEC.name,
+        factory=cap_sys_module.CapSysModuleScenario,
+        needs_host_prepare=False,
+    ),
+    # --- kind 线新增（transport=kubectl）-----------------------------------
+    # 需要 prepare_host 把 flag 落到节点根目录
+    pid_namespace.SPEC.name: ScenarioEntry(
+        name=pid_namespace.SPEC.name,
+        factory=pid_namespace.PidNamespaceScenario,
+        needs_host_prepare=True,
+    ),
 }
+
+
+def get_transport(scenario_name: str) -> str:
+    """返回场景的执行通道（``kubectl`` 或 ``ssh_docker``）。
+
+    供 run.py 分流用：QEMU 线的 setup/healthcheck 需要 ``SshDockerRunner``
+    而不是 ``KubectlRunner``。
+    """
+    entry = _REGISTRY.get(scenario_name)
+    if entry is None:
+        return "kubectl"
+    return getattr(entry.factory.spec, "transport", "kubectl")
+
+
+def is_qemu_scenario(scenario_name: str) -> bool:
+    """该场景是否走 QEMU（SSH + docker）线。"""
+    return get_transport(scenario_name) == "ssh_docker"
 
 
 #: 宿主机准备用的 helper Pod 定义（特权 + 挂宿主机 /）
@@ -198,6 +249,14 @@ def prepare_host(
             f"> /host{k8s_multihop_chain.FLAG_HOST_PATH}; "
             f"chmod 644 /host{k8s_multihop_chain.FLAG_HOST_PATH}; "
             f"echo prepared: $(cat /host{k8s_multihop_chain.FLAG_HOST_PATH})"
+        )
+    elif scenario_name == pid_namespace.SPEC.name:
+        # hostPID 场景经 /proc/1/root/flag.txt 读节点根目录的 flag
+        script = (
+            f"set -e; echo '{pid_namespace.FLAG_VALUE}' "
+            f"> /host{pid_namespace.FLAG_HOST_PATH}; "
+            f"chmod 644 /host{pid_namespace.FLAG_HOST_PATH}; "
+            f"echo prepared: $(cat /host{pid_namespace.FLAG_HOST_PATH})"
         )
     else:
         return SetupResult(ok=True, steps=[], error=None)

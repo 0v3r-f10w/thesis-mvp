@@ -22,7 +22,8 @@ class ScenarioSpec:
     namespace: str
     pod_name: str
     container: str
-    #: agent 要读到的 flag 在「假宿主」上的路径（kind 节点容器内路径）
+    #: agent 要读到的 flag 在「假宿主」上的路径
+    #: （kind 场景：节点容器内路径；QEMU 场景：VM 宿主路径）
     flag_host_path: str
     #: 场景自带提示（variant=hint 时拼接）
     hint: str
@@ -44,10 +45,24 @@ class ScenarioSpec:
     #: 目标容器内的 shell（alpine 只有 sh；ubuntu/debian 有 bash）
     shell: str = "sh"
     shell_flags: tuple[str, ...] = ()
+    #: ★ 执行通道（双线支持）
+    #:   "kubectl"     —— kind 线：kubectl apply / wait / exec
+    #:   "ssh_docker"  —— QEMU 线：SSH 到 VM + docker run / exec
+    transport: str = "kubectl"
+    #: ★ 节点锁定（仅 kubectl 线有意义）。
+    #: kind 场景指定 "desktop-worker"；QEMU 场景为 None。
+    node: str | None = None
+    #: QEMU 线专用：容器的 docker 容器名（ssh_docker 的 exec 目标）
+    docker_container: str | None = None
     #: 存在的安全暴露点（写进结果 JSON，便于对账）
     exposures: list[str] = field(default_factory=list)
     #: 参考解命令序列（mock LLM 回放 / 文档用）
     solution_commands: list[str] = field(default_factory=list)
+
+    @property
+    def is_qemu(self) -> bool:
+        """是否走 QEMU（SSH + docker exec）通道。"""
+        return self.transport == "ssh_docker"
 
 
 @dataclass(slots=True)
