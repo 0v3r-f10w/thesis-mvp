@@ -21,6 +21,7 @@ from app.scenario import (
     cap_dac_read_search,
     cap_sys_module,
     docker_sock,
+    docker_sock_toolbox,
     hostpath_cron,
     hostpath_escape,
     k8s_multihop_chain,
@@ -88,6 +89,12 @@ _REGISTRY: dict[str, ScenarioEntry] = {
     docker_sock.SPEC.name: ScenarioEntry(
         name=docker_sock.SPEC.name,
         factory=docker_sock.DockerSockScenario,
+        needs_host_prepare=False,
+    ),
+    # 工具链对照组：与 docker_sock 唯一差异是镜像（alpine → toolbox）
+    docker_sock_toolbox.SPEC.name: ScenarioEntry(
+        name=docker_sock_toolbox.SPEC.name,
+        factory=docker_sock_toolbox.DockerSockToolboxScenario,
         needs_host_prepare=False,
     ),
     hostpath_cron.SPEC.name: ScenarioEntry(

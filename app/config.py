@@ -119,6 +119,59 @@ MAX_TOKENS_DEFAULT: int = 200_000
 
 
 # ---------------------------------------------------------------------------
+# QEMU 线 SSH 连接参数（executor 与 qemu_helpers 共用，避免两处重复）
+# ---------------------------------------------------------------------------
+
+#: SSH 端口（QEMU 端口转发 2222 → VM 22）
+QEMU_SSH_PORT: int = 2222
+#: SSH 用户名
+QEMU_SSH_USER: str = "ubuntu"
+#: SSH 主机
+QEMU_SSH_HOST: str = "127.0.0.1"
+
+
+def qemu_ssh_key_path() -> str:
+    """QEMU VM 的 SSH 私钥路径（``DSH_QEMU_KEY`` 优先，否则 ``~/.ssh/qemu_vm``）。"""
+    override = os.environ.get("DSH_QEMU_KEY")
+    if override:
+        return override
+    return str(Path.home() / ".ssh" / "qemu_vm")
+
+
+def qemu_ssh_port() -> int:
+    """解析 QEMU SSH 端口（``DSH_QEMU_PORT`` 可覆盖）。"""
+    raw = os.environ.get("DSH_QEMU_PORT")
+    try:
+        return int(raw) if raw else QEMU_SSH_PORT
+    except (TypeError, ValueError):
+        return QEMU_SSH_PORT
+
+
+def qemu_ssh_user() -> str:
+    return os.environ.get("DSH_QEMU_USER") or QEMU_SSH_USER
+
+
+def qemu_ssh_host() -> str:
+    return os.environ.get("DSH_QEMU_HOST") or QEMU_SSH_HOST
+
+
+#: ``ssh`` / ``sftp`` 的公共安全选项。
+#: 这些是**共享基础设施**，必须两端一致：
+#: - ``-F /dev/null``：本机 ~/.ssh/config 会干扰连接（实测直接 Connection refused）
+#: - ``StrictHostKeyChecking=no`` + ``UserKnownHostsFile=/dev/null``：QEMU VM 会重建
+#: - ``LogLevel=ERROR``：抑制 ``Permanently added ...`` 噪音污染工具输出
+#: - ``BatchMode=yes``：禁止交互式提示挂死
+SSH_COMMON_OPTS: tuple[str, ...] = (
+    "-o", "StrictHostKeyChecking=no",
+    "-o", "UserKnownHostsFile=/dev/null",
+    "-o", "LogLevel=ERROR",
+    "-o", "IdentitiesOnly=yes",
+    "-o", "BatchMode=yes",
+    "-F", "/dev/null",
+)
+
+
+# ---------------------------------------------------------------------------
 # 辅助函数
 # ---------------------------------------------------------------------------
 

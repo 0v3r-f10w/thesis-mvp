@@ -54,6 +54,17 @@ class ScenarioSpec:
     node: str | None = None
     #: QEMU 线专用：容器的 docker 容器名（ssh_docker 的 exec 目标）
     docker_container: str | None = None
+    #: ★ QEMU 线专用：teardown 时需要清理的 **VM 宿主路径**（支持 glob）。
+    #:
+    #: 为什么需要显式声明而不是盲扫 /tmp 做差分：
+    #: agent 在攻击过程中会在宿主文件系统留下文件（如 cap_sys_module 用
+    #: ``insmod target=/tmp/flag_out`` 写了 13 个 ``/tmp/vm_*`` 探针文件）。
+    #: 但 ``/tmp`` 里同时可能有系统/其他进程的文件，**盲扫差分删除有误删风险**。
+    #: 因此由每个场景**显式声明**自己可能写入的路径模式，
+    #: teardown 只按这个列表做 glob 删除。
+    #:
+    #: 示例：``("/tmp/dsh-*", "/tmp/flag_out", "/tmp/vm_*")``
+    host_paths_to_cleanup: tuple[str, ...] = ()
     #: 存在的安全暴露点（写进结果 JSON，便于对账）
     exposures: list[str] = field(default_factory=list)
     #: 参考解命令序列（mock LLM 回放 / 文档用）

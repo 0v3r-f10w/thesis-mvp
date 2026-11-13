@@ -33,11 +33,21 @@ import time
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from app.config import (
+    QEMU_SSH_HOST as DEFAULT_SSH_HOST,
+    QEMU_SSH_PORT as DEFAULT_SSH_PORT,
+    QEMU_SSH_USER as DEFAULT_SSH_USER,
+    SSH_COMMON_OPTS,
+    qemu_ssh_host,
+    qemu_ssh_key_path,
+    qemu_ssh_port,
+    qemu_ssh_user,
+)
 
-#: 默认 SSH 参数（可从环境变量覆盖，便于换端口/换 key）
-DEFAULT_SSH_PORT = 2222
-DEFAULT_SSH_USER = "ubuntu"
-DEFAULT_SSH_HOST = "127.0.0.1"
+
+#: 默认 SSH 参数来源：统一在 app.config 定义（executor 也读同一份，
+#: 避免 executor 与场景层各写一套导致漂移）。
+#: DEFAULT_SSH_* 由上面的 import 别名提供，保持向后兼容。
 
 #: VM 宿主上的 flag（由用户预置）
 VM_FLAG_PATH = "/flag.txt"
@@ -87,15 +97,12 @@ class SshDockerRunner:
 
     @classmethod
     def from_env(cls) -> "SshDockerRunner":
-        """从环境变量构造，便于不同机器复用。"""
-        key = os.environ.get("DSH_QEMU_KEY") or str(
-            Path.home() / ".ssh" / "qemu_vm"
-        )
+        """从 ``app.config`` 的 QEMU 连接参数构造（环境变量可覆盖）。"""
         return cls(
-            host=os.environ.get("DSH_QEMU_HOST", DEFAULT_SSH_HOST),
-            port=int(os.environ.get("DSH_QEMU_PORT", DEFAULT_SSH_PORT)),
-            user=os.environ.get("DSH_QEMU_USER", DEFAULT_SSH_USER),
-            key_path=key,
+            host=qemu_ssh_host(),
+            port=qemu_ssh_port(),
+            user=qemu_ssh_user(),
+            key_path=qemu_ssh_key_path(),
             default_timeout=int(os.environ.get("DSH_QEMU_TIMEOUT", "120")),
         )
 
@@ -111,12 +118,7 @@ class SshDockerRunner:
             "ssh",
             "-4",                       # 强制 IPv4，避免 localhost 解析歧义
             "-p", str(self.port),
-            "-o", "StrictHostKeyChecking=no",
-            "-o", "UserKnownHostsFile=/dev/null",
-            "-o", "LogLevel=ERROR",     # 抑制 "Permanently added..." 噪音
-            "-o", "IdentitiesOnly=yes",
-            "-o", "BatchMode=yes",
-            "-F", "/dev/null",          # ← 绕过本机 ssh config（实测必需）
+            *SSH_COMMON_OPTS,           # ← 与 executor 共用同一份安全选项
         ]
         if self.key_path:
             argv += ["-i", self.key_path]
@@ -378,6 +380,143 @@ class SshDockerRunner:
 # ---------------------------------------------------------------------------
 # 便捷：确认 VM 可达（preflight 用）
 # ---------------------------------------------------------------------------
+
+
+def snapshot_resources(r: "SshDockerRunner") -> dict[str, set[str]]:
+    """记录 VM 上现有 Docker 资源的 ID 集合（差分清理的基线）。
+
+    ★ 为什么需要这个 ★
+    -----------------
+    agent 经 Docker API 创建的资源名是 daemon **自动生成**的
+    （容器 ``gracious_fermi``、网络 ``testnet`` 等），无法按名字过滤清理。
+    因此在 setup 开始时拍快照，teardown 时删除所有新增项。
+
+    Returns:
+        ``{"container": {...}, "network": {...}, "volume": {...}}``
+    """
+    out: dict[str, set[str]] = {}
+    for kind, cmd in (
+        ("container", "sudo docker ps -aq"),
+        ("network", "sudo docker network ls -q"),
+        ("volume", "sudo docker volume ls -q"),
+    ):
+        res = r.run(cmd)
+        out[kind] = {x for x in (res.stdout or "").split() if x}
+    return out
+
+
+def sweep_new_resources(
+    r: "SshDockerRunner", pre: dict[str, set[str]] | None
+) -> tuple[bool, list[dict[str, object]]]:
+    """删除快照之后新增的容器 / 网络 / 卷，并校验无残留。
+
+    删除顺序：容器 → 网络 → 卷。
+    顺序很重要：容器未删时仍持有网络/卷引用，``network rm`` 会失败。
+
+    Args:
+        r: SSH runner。
+        pre: :func:`snapshot_resources` 的结果；``None`` 时跳过（返回 True）。
+
+    Returns:
+        ``(clean, steps)`` —— clean 表示三类资源均无残留。
+    """
+    steps: list[dict[str, object]] = []
+    if pre is None:
+        return True, steps
+
+    specs = (
+        ("container", "sudo docker ps -aq", "sudo docker rm -f {}"),
+        ("network", "sudo docker network ls -q", "sudo docker network rm {}"),
+        ("volume", "sudo docker volume ls -q", "sudo docker volume rm {}"),
+    )
+
+    for kind, list_cmd, rm_tmpl in specs:
+        cur = r.run(list_cmd)
+        ids = [x for x in (cur.stdout or "").split() if x]
+        new_ids = [i for i in ids if i not in pre.get(kind, set())]
+        if new_ids:
+            r.run(rm_tmpl.format(" ".join(new_ids)) + " 2>&1 || true")
+        steps.append(
+            {
+                "step": f"sweep-new-{kind}s",
+                "ok": True,
+                "detail": f"removed {len(new_ids)} new {kind}(s): "
+                          f"{[i[:12] for i in new_ids]}",
+            }
+        )
+
+    leftovers: dict[str, list[str]] = {}
+    for kind, list_cmd, _ in specs:
+        after = r.run(list_cmd)
+        ids = [x for x in (after.stdout or "").split() if x]
+        left = [i for i in ids if i not in pre.get(kind, set())]
+        if left:
+            leftovers[kind] = [i[:12] for i in left]
+
+    steps.append(
+        {
+            "step": "verify-clean",
+            "ok": not leftovers,
+            "detail": (
+                "no residual containers/networks/volumes"
+                if not leftovers
+                else f"LEFTOVER: {leftovers}"
+            ),
+        }
+    )
+    return (not leftovers), steps
+
+
+def cleanup_host_paths(
+    r: "SshDockerRunner", patterns: tuple[str, ...]
+) -> list[dict[str, object]]:
+    """删除场景声明的 VM 宿主路径（支持 glob）。
+
+    ★ 为什么按声明而非盲扫 ★
+    ------------------------
+    agent 攻击时会在宿主文件系统留文件（cap_sys_module 实测留下 13 个
+    ``/tmp/vm_*``）。但 ``/tmp`` 同时有系统和其他进程的文件，
+    **盲扫差分删除有误删风险**。因此只删除场景在
+    ``ScenarioSpec.host_paths_to_cleanup`` 里显式声明的模式。
+
+    Args:
+        r: SSH runner。
+        patterns: glob 模式列表，如 ``("/tmp/vm_*", "/tmp/flag_out")``。
+
+    Returns:
+        steps 列表（供 SetupResult 记录）。
+    """
+    steps: list[dict[str, object]] = []
+    if not patterns:
+        return steps
+
+    for pattern in patterns:
+        # 先数一下匹配了多少，再删，便于审计
+        probe = r.run(f"sudo sh -c 'ls -1d {shlex.quote(pattern)} 2>/dev/null'")
+        matched = [x for x in (probe.stdout or "").split("\n") if x.strip()]
+        if matched:
+            r.run(
+                "sudo sh -c "
+                + shlex.quote(f"rm -rf {pattern}")
+                + " 2>/dev/null || true"
+            )
+        # 复核
+        after = r.run(f"sudo sh -c 'ls -1d {shlex.quote(pattern)} 2>/dev/null'")
+        left = [x for x in (after.stdout or "").split("\n") if x.strip()]
+        steps.append(
+            {
+                "step": f"cleanup-host:{pattern}",
+                "ok": not left,
+                "detail": (
+                    f"removed {len(matched)} path(s)"
+                    if matched
+                    else "nothing matched"
+                )
+                + (f"; LEFTOVER={left[:5]}" if left else ""),
+            }
+        )
+
+    return steps
 
 
 def qemu_reachable(runner: SshDockerRunner) -> tuple[bool, str]:
